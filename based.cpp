@@ -124,7 +124,7 @@ signed main() {
   cout << fixed << setprecision(20);
 
   int tests_lim = 1;
-  //cin >> tests_lim;
+  cin >> tests_lim;
   for (int test = 1; test <= tests_lim; ++test) {
     cerr << "_____Test #" << test << "_____\n";
     solve();
