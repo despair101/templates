@@ -20,7 +20,6 @@ struct SegmentTree {
     }
   }
  
- 
   void modify(int l, int r, int v, int x, int lx, int rx) {
     if (lx >= r || rx <= l) return;
     if (lx >= l && rx <= r) {
