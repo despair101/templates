@@ -109,8 +109,10 @@ inline int __builtin_clzll(ll x) {
 }
 inline int __lg(ll x) {
   int cnt = 0;
-  while (x >= (1ll << cnt)) ++cnt;
-  return cnt - 1;
+  for (int i = 1; i < 63; ++i, ++cnt) {
+    if ((1ll << i) > x) break;
+  }
+  return cnt;
 }
 #endif
 
