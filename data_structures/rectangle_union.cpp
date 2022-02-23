@@ -45,12 +45,17 @@ void dfs(Node* nd) {
 }
 
 struct rectangle {
-  int x1, y1, x2, y2;
+  int x1;
+  int y1;
+  int x2;
+  int y2;
 };
 
 ll get_rectangles_union(vector<rectangle>& v) {
   struct event {
-    int x, y1, y2;
+    int x;
+    int y1;
+    int y2;
     int type;
   };
 
