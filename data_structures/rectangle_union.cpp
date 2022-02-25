@@ -59,7 +59,7 @@ unsigned long long get_rectangles_union(vector<rectangle>& v) {
     int type;
   };
 
-  vector<event> vec(2 * sz(v));
+  vector<event> vec(2 * v.size());
   for (int i = 0; i < sz(v); ++i) {
     vec[2 * i] = { v[i].x1, v[i].y1, v[i].y2, 1 };
     vec[2 * i + 1] = { v[i].x2, v[i].y1, v[i].y2, -1 };
@@ -73,11 +73,11 @@ unsigned long long get_rectangles_union(vector<rectangle>& v) {
     });
 
   Node* tree = new Node(LX, RX);
-  unsigned long long area = 0;
+  long long area = 0;
 
-  for (int i = 0; i < sz(vec) - 1; ++i) {
+  for (int i = 0; i + 1 < vec.size(); ++i) {
     add(vec[i].y1, vec[i].y2, vec[i].type, tree, LX, RX);
-    area += (unsigned long long)(vec[i + 1].x - vec[i].x) * (RX - LX - tree->cnt);
+    area += (long long)(vec[i + 1].x - vec[i].x) * (RX - LX - tree->cnt);
   }
 
   dfs(tree);
