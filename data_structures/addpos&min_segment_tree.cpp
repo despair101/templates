@@ -1,7 +1,7 @@
 class SegmentTree {
   struct Node {
-    int mx = 0;
-    int add = 0;
+    long long mx = 0;
+    long long add = 0;
   };
 
   int size = 1;
@@ -33,7 +33,7 @@ class SegmentTree {
     }
   }
 
-  int get(int l, int r, int x, int lx, int rx) {
+  long long get(int l, int r, int x, int lx, int rx) {
     if (lx >= r || rx <= l) return 0;
     if (lx >= l && rx <= r) return t[x].mx;
     int mx = (lx + rx) / 2;
@@ -51,7 +51,7 @@ public:
     modify(l, r, v, 0, 0, size);
   }
 
-  int get(int l, int r) {
+  long long get(int l, int r) {
     return get(l, r, 0, 0, size);
   }
 };
