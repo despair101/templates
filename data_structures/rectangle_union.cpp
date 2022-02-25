@@ -3,7 +3,7 @@ const int LX = 0, RX = (1 << 30);
 struct Node {
   int min_v;
   int cnt;
-  int  add;
+  int add;
   Node* l;
   Node* r;
 
