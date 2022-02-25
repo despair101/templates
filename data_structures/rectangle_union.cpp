@@ -51,7 +51,7 @@ struct rectangle {
   int y2;
 };
 
-ll get_rectangles_union(vector<rectangle>& v) {
+unsigned long long get_rectangles_union(vector<rectangle>& v) {
   struct event {
     int x;
     int y1;
@@ -73,11 +73,11 @@ ll get_rectangles_union(vector<rectangle>& v) {
     });
 
   Node* tree = new Node(LX, RX);
-  ll area = 0;
+  unsigned long long area = 0;
 
   for (int i = 0; i < sz(vec) - 1; ++i) {
     add(vec[i].y1, vec[i].y2, vec[i].type, tree, LX, RX);
-    area += ll(vec[i + 1].x - vec[i].x) * (RX - LX - tree->cnt);
+    area += (unsigned long long)(vec[i + 1].x - vec[i].x) * (RX - LX - tree->cnt);
   }
 
   dfs(tree);
