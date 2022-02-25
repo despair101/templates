@@ -51,7 +51,7 @@ struct rectangle {
   int y2;
 };
 
-unsigned long long get_rectangles_union(vector<rectangle>& v) {
+long long get_rectangles_union(vector<rectangle>& v) {
   struct event {
     int x;
     int y1;
