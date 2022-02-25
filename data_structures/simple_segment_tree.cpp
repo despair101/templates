@@ -60,9 +60,11 @@ public:
     t.resize(2 * size - 1);
     build(0, 0, size, a);
   }
+  
   void change(int i, Node v) {
     change(i, v, 0, 0, size);
   }
+  
   Node get(int l, int r) {
     return get(l, r, 0, 0, size);
   }
