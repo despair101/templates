@@ -9,7 +9,7 @@ class SegmentTree {
 
   void build(int x, int lx, int rx, const vector<int>& a) {
     if (rx - lx == 1) {
-      if (lx < sz(a)) {
+      if (lx < a.size()) {
         t[x].mx = a[lx];
       }
     } else {
@@ -42,7 +42,7 @@ class SegmentTree {
 
 public:
   SegmentTree(const vector<int>& a) {
-    while (size < sz(a)) size *= 2;
+    while (size < a.size()) size *= 2;
     t.resize(2 * size - 1);
     build(0, 0, size, a);
   }
