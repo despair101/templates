@@ -68,7 +68,7 @@ signed main() {
     cout << fixed << setprecision(20);
 
     int testsLimit = 1;
-    //cin >> testsLimit;
+    cin >> testsLimit;
     for (int test = 1; test <= testsLimit; ++test) {
         cerr << "_____Test #" << test << "_____\n";
         solve();
