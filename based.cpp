@@ -32,9 +32,9 @@ typedef long double ld;
 //debug output
 template<class A> void print(A a);
 template<class A, class B> void print(pair<A, B> a);
-template<class A> void print(set<A> a);
-template<class A> void print(multiset<A> a);
-template<class A, class B> void print(map<A, B> a);
+template<class A, class B> void print(set<A, B> a);
+template<class A, class B> void print(multiset<A, B> a);
+template<class A, class B, class C> void print(map<A, B, C> a);
 template<class A> void print(unordered_set<A> a);
 template<class A> void print(unordered_multiset<A> a);
 template<class A, class B> void print(unordered_map<A, B> a);
@@ -44,9 +44,9 @@ template<class A> void print(A a) { cerr << a; }
 template<class A, class B> void print(pair<A, B> a) { cerr << "("; print(a.first); cerr << " "; print(a.second); cerr << ")"; }
 template<class A> void print(vector<A> a) { for (A b : a) { print(b); cerr << " "; }; cerr << "\n"; }
 template<class A> void print(deque<A> a) { for (A b : a) { print(b); cerr << " "; }; cerr << "\n"; }
-template<class A> void print(set<A> a) { for (A b : a) { print(b); cerr << " "; }; cerr << "\n"; }
-template<class A> void print(multiset<A> a) { for (A b : a) { print(b); cerr << " "; }; cerr << "\n"; }
-template<class A, class B> void print(map<A, B> a) { for (pair<A, B> b : a) { print(b); cerr << ' '; }; cerr << "\n"; }
+template<class A, class B> void print(set<A, B> a) { for (A b : a) { print(b); cerr << " "; }; cerr << "\n"; }
+template<class A, class B> void print(multiset<A, B> a) { for (A b : a) { print(b); cerr << " "; }; cerr << "\n"; }
+template<class A, class B, class C> void print(map<A, B, C> a) { for (pair<A, B> b : a) { print(b); cerr << ' '; }; cerr << "\n"; }
 template<class A> void print(unordered_set<A> a) { for (A b : a) { print(b); cerr << " "; }; cerr << "\n"; }
 template<class A> void print(unordered_multiset<A> a) { for (A b : a) { print(b); cerr << " "; }; cerr << "\n"; }
 template<class A, class B> void print(unordered_map<A, B> a) { for (pair<A, B> b : a) { print(b); cerr << " "; }; cerr << "\n"; }
@@ -57,8 +57,6 @@ template<class A, class B> void print(unordered_map<A, B> a) { for (pair<A, B> b
 
 mt19937 rnd(101);
 
-const int INF = int(1e9) + 7;
-
 void solve() {
 }
 
@@ -68,7 +66,7 @@ signed main() {
     cout << fixed << setprecision(20);
 
     int testsLimit = 1;
-    cin >> testsLimit;
+    //cin >> testsLimit;
     for (int test = 1; test <= testsLimit; ++test) {
         cerr << "_____Test #" << test << "_____\n";
         solve();
