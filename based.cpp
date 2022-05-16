@@ -51,6 +51,9 @@ template<class A> void print(unordered_set<A> a) { for (A b : a) { print(b); cer
 template<class A> void print(unordered_multiset<A> a) { for (A b : a) { print(b); cerr << " "; }; cerr << "\n"; }
 template<class A, class B> void print(unordered_map<A, B> a) { for (pair<A, B> b : a) { print(b); cerr << " "; }; cerr << "\n"; }
 
+template<typename A> bool umax(A& x, A y) { if (y > x) { x = y; return true; } return false; }
+template<typename A> bool umin(A& x, A y) { if (y < x) { x = y; return true; } return false; }
+
 //#define int ll
 #define sz(a) int(a.size())
 #define dbg(a) cerr << "\n" << #a << ":\n "; print(a); cerr << "\n"
