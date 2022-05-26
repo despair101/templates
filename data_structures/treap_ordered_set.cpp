@@ -11,11 +11,6 @@ struct Node {
     Node(int x_, int cnt_ = 1) : x(x_), cnt(cnt_), dp(1), y(rnd()), l(nullptr), r(nullptr) {}
 };
 
-struct kok {
-    int bebra;
-    int sus;
-};
-
 void relax(Node* a) {
     if (!a) return;
     a->dp = a->cnt;
