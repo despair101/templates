@@ -21,7 +21,6 @@ void relax(Node* a) {
 Node* merge(Node* a, Node* b) {
     if (!a) return b;
     if (!b) return a;
-
     if (a->y > b->y) {
         a->r = merge(a->r, b);
         relax(a);
@@ -36,7 +35,6 @@ Node* merge(Node* a, Node* b) {
 // < >=
 pair<Node*, Node*> split(Node* a, int v) {
     if (!a) return { nullptr, nullptr };
-
     if (a->x < v) {
         auto [t1, t2] = split(a->r, v);
         a->r = t1;
