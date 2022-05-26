@@ -62,8 +62,8 @@ long long get_rectangles_union(vector<rectangle>& v) {
         vec[2 * i + 1] = { v[i].x2, v[i].y1, v[i].y2, -1 };
     }
 
-    v.clear();
-    v.shrink_to_fit();
+    //v.clear();
+    //v.shrink_to_fit();
 
     sort(vec.begin(), vec.end(), [&](event& a, event& b) {
         return a.x < b.x;
