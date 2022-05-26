@@ -73,7 +73,7 @@ Node* insert(Node* a, int v, int c = 1) {
 Node* erase(Node* a, int v, int c = 1) {
     auto [t1, t2] = split(a, v);
     auto [t21, t22] = split(t2, v + 1);
-    if (t21 && t21->cnt > c) {
+    if (getCnt(t21) > c) {
         t21->cnt -= c;
         relax(t21);
         return merge(t1, merge(t21, t22));
