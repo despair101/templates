@@ -8,7 +8,7 @@ struct Node {
     Node* l;
     Node* r;
 
-    Node(int x_, int cnt_ = 1) : x(x_), cnt(1), dp(1), y(rnd()), l(nullptr), r(nullptr) {}
+    Node(int x_, int cnt_ = 1) : x(x_), cnt(cnt_), dp(1), y(rnd()), l(nullptr), r(nullptr) {}
 };
 
 struct kok {
