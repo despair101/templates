@@ -15,13 +15,8 @@ struct Node {
     }
 };
 
-int getCnt(Node* a) {
-    return (a ? a->cnt : 0);
-}
-
-int getDp(Node* a) {
-    return (a ? a->dp : 0);
-}
+inline int getCnt(Node* a) { return (a ? a->cnt : 0); }
+inline int getDp(Node* a) { return (a ? a->dp : 0); }
 
 void relax(Node* a) {
     if (!a) return;
