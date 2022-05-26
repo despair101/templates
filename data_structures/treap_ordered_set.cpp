@@ -15,11 +15,17 @@ struct Node {
     }
 };
 
+int getCnt(Node* a) {
+    return (a ? a->cnt : 0);
+}
+
+int getDp(Node* a) {
+    return (a ? a->dp : 0);
+}
+
 void relax(Node* a) {
     if (!a) return;
-    a->dp = a->cnt;
-    if (a->l) a->dp += a->l->dp;
-    if (a->r) a->dp += a->r->dp;
+    a->dp = getCnt(a) + getCnt(a->l) + getCnt(a->r);
 }
 
 Node* merge(Node* a, Node* b) {
