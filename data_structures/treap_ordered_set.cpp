@@ -25,7 +25,7 @@ int getDp(Node* a) {
 
 void relax(Node* a) {
     if (!a) return;
-    a->dp = getCnt(a) + getCnt(a->l) + getCnt(a->r);
+    a->dp = getCnt(a) + getDp(a->l) + getDp(a->r);
 }
 
 Node* merge(Node* a, Node* b) {
