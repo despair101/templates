@@ -9,6 +9,10 @@ struct Node {
     Node* r;
 
     Node(int x_, int cnt_ = 1) : x(x_), cnt(cnt_), dp(cnt_), y(rnd()), l(nullptr), r(nullptr) {}
+    ~Node() {
+        if (left) delete left;
+        if (right) delete right;
+    }
 };
 
 void relax(Node* a) {
