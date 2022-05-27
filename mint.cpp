@@ -32,9 +32,7 @@ template<int mod> struct Mint {
         Mint a = this->x, res = 1;
         int n = mod - 2;
         while (n) {
-            if (n & 1) {
-                res *= a;
-            }
+            if (n & 1) res *= a;
             a *= a;
             n >>= 1;
         }
