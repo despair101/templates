@@ -20,5 +20,17 @@ public:
         }
     }
 
+    int lb(int sum) {
+        if (get(0, size - 1) < sum) return -1;
+        int i = -1;
+        for (int l = 27; l >= 0; --l) {
+            if (i + (1 << l) < size && sum > t[i + (1 << l)]) {
+                i += (1 << l);
+                sum -= t[i];
+            }
+        }
+        return i + 1;
+    }
+
     BIT(int n) : size(n), t(n) {}
 };
