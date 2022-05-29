@@ -1,5 +1,5 @@
 class DSU {
-    int comps;
+    int cnt;
     vector<int> p;
     vector<int> r;
 
@@ -18,9 +18,9 @@ public:
         if (r[u] < r[v]) swap(u, v);
         r[u] += r[v];
         p[v] = u;
-        --comps;
+        --cnt;
         return true;
     }
 
-    DSU(int n) : p(n, -1), r(n), comps(n) {}
+    DSU(int n) : p(n, -1), r(n), cnt(n) {}
 };
