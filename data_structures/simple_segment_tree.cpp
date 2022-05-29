@@ -5,7 +5,7 @@ template<class A> class SegmentTree {
     const Node NEUTRAL{
     }; //TODO
 
-    int size;
+    int size = 1;
     vector<Node> t;
 
     inline Node compose(Node l, Node r) {
@@ -54,7 +54,7 @@ template<class A> class SegmentTree {
     }
 
 public:
-    SegmentTree(const vector<A>& a) : size(1) {
+    SegmentTree(const vector<A>& a) {
         while (size < a.size()) {
             size *= 2;
         }
