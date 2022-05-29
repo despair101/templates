@@ -26,11 +26,11 @@ template<int MOD> struct Mint {
         return res;
     }
 
-    friend istream& operator >> (istream& in, Mint<mod>& a) {
+    friend istream& operator >> (istream& in, Mint<MOD>& a) {
         in >> a.x;
         return in;
     }
-    friend ostream& operator << (ostream& out, Mint<mod> a) {
+    friend ostream& operator << (ostream& out, Mint<MOD> a) {
         out << a.x;
         return out;
     }
