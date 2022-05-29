@@ -19,8 +19,5 @@ public:
         }
     }
 
-    BIT(int n) {
-        size = n;
-        t.resize(size);
-    }
+    BIT(int n) : size(n), t(n);
 };
