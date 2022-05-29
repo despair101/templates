@@ -1,7 +1,8 @@
 template<int mod> struct Mint {
     int x;
 
-    Mint(int x_) : x(x_ < 0 ? x_ % mod + mod : x_ % mod) {}
+    Mint(int x_) : x((x_ < 0 ? x_ % mod + mod : x_ % mod)) {}
+    Mint() {}
 
     friend bool operator == (Mint a, Mint b) {
         return a.x == b.x;
@@ -32,14 +33,16 @@ template<int mod> struct Mint {
         Mint a = this->x, res = 1;
         int n = mod - 2;
         while (n) {
-            if (n & 1) res *= a;
+            if (n & 1) {
+                res *= a;
+            }
             a *= a;
             n >>= 1;
         }
         return res;
     }
 
-    friend istream& operator >> (istream& in, Mint<mod> a) {
+    friend istream& operator >> (istream& in, Mint<mod>& a) {
         in >> a.x;
         return in;
     }
