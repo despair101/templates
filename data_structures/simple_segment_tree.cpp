@@ -1,10 +1,10 @@
 struct Node {
 }; //TODO
 
-template<class A> class SegmentTree {
-    const Node NEUTRAL{
-    }; //TODO
+const Node NEUTRAL{
+}; //TODO
 
+template<class A> class SegmentTree {
     int size = 1;
     vector<Node> t;
 
