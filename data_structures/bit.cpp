@@ -19,5 +19,5 @@ public:
         }
     }
 
-    BIT(int n) : size(n), t(n);
+    BIT(int n) : size(n), t(n) {}
 };
