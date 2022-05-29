@@ -3,6 +3,10 @@ class DSU {
     vector<int> r;
 
 public:
+    inline int getRank(int u) {
+        return r[u];
+    }
+
     int get(int u) {
         return (p[u] == u ? u : p[u] = get(p[u]));
     }
