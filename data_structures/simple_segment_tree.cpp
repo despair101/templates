@@ -28,7 +28,7 @@ template<class A> class SegmentTree {
     }
   }
 
-  void change(int i, Node& v, int x, int lx, int rx) {
+  void change(int i, Node v, int x, int lx, int rx) {
     if (rx - lx == 1) {
       t[x] = v;
     } else {
