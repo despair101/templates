@@ -1,10 +1,11 @@
 class DSU {
+    int comps;
     vector<int> p;
     vector<int> r;
 
 public:
     int get(int u) {
-        return (p[u] == u ? u : p[u] = get(p[u]));
+        return (p[u] == -1 ? u : p[u] = get(p[u]));
     }
 
     inline int getRank(int u) {
@@ -17,11 +18,9 @@ public:
         if (r[u] < r[v]) swap(u, v);
         r[u] += r[v];
         p[v] = u;
+        --comps;
         return true;
     }
 
-    DSU(int n) : p(n), r(n) {
-        iota(p.begin(), p.end(), 0);
-        fill(r.begin(), r.end(), 1);
-    }
+    DSU(int n) : p(n, -1), r(n), comps(n) {}
 };
