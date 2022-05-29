@@ -5,14 +5,18 @@ template<class A> class BIT {
 public:
     A get(int l, int r) {
         A res = 0;
-        for (; r >= 0; r &= r + 1, --r) res += t[r];
-        --l;
-        for (; l >= 0; l &= l + 1, --l) res -= t[l];
+        for (int i = r; i >= 0; i &= i + 1, --i) {
+            res += t[i];
+        for (int i = l - 1; i >= 0; i &= i + 1, --i) {
+            res -= t[i];
+        }
         return res;
     }
     
     void add(int i, int v) {
-        for (; i < size; i |= i + 1) t[i] += v;
+        for (; i < size; i |= i + 1) {
+            t[i] += v;
+        }
     }
 
     BIT(int n) {
