@@ -1,23 +1,23 @@
-template<int mod> struct Mint {
+template<int MOD> struct Mint {
     int x;
 
-    Mint(int x_) : x((x_ < 0 ? x_ % mod + mod : x_ % mod)) {}
+    Mint(int x_) : x((x_ < 0 ? x_ % MOD + MOD : x_ % MOD)) {}
     Mint() {}
 
     friend bool operator == (Mint a, Mint b) { return a.x == b.x; }
 
-    friend Mint operator + (Mint a, Mint b) { return (a.x + b.x >= mod ? a.x + b.x - mod : a.x + b.x); }
+    friend Mint operator + (Mint a, Mint b) { return (a.x + b.x >= MOD ? a.x + b.x - MOD : a.x + b.x); }
     friend Mint operator += (Mint& a, Mint b) { return a = (a + b); }
 
-    friend Mint operator - (Mint a, Mint b) { return (a.x - b.x < 0 ? a.x - b.x + mod : a.x - b.x); }
+    friend Mint operator - (Mint a, Mint b) { return (a.x - b.x < 0 ? a.x - b.x + MOD : a.x - b.x); }
     friend Mint operator -= (Mint& a, Mint b) { return a = (a - b); }
 
-    friend Mint operator * (Mint a, Mint b) { return ll(a.x) * (b.x) % mod; }
+    friend Mint operator * (Mint a, Mint b) { return ll(a.x) * (b.x) % MOD; }
     friend Mint operator *= (Mint& a, Mint b) { return a = (a * b); }
 
     Mint rev() {
         Mint a = this->x, res = 1;
-        int n = mod - 2;
+        int n = MOD - 2;
         while (n) {
             if (n & 1) res *= a;
             a *= a;
