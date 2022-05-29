@@ -8,9 +8,8 @@ public:
         return (p[u] == -1 ? u : p[u] = get(p[u]));
     }
 
-    inline int getRank(int u) {
-        return r[get(u)];
-    }
+    inline int comps() { return cnt; }
+    inline int rank(int u) { return r[get(u)]; }
 
     bool unite(int u, int v) {
         u = get(u), v = get(v);
