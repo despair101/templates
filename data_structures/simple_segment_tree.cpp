@@ -1,7 +1,7 @@
 struct Node {
 }; //TODO
 
-template<class A> class SegmentTree {
+class SegmentTree {
   const Node NEUTRAL{
   }; //TODO
 
@@ -13,7 +13,7 @@ template<class A> class SegmentTree {
     return res;
   }
 
-  void build(int x, int lx, int rx, const vector<A>& a) {
+  void build(int x, int lx, int rx, const vector<long long>& a) {
     if (rx - lx == 1) {
       if (lx < a.size()) {
         //TODO
@@ -54,7 +54,7 @@ template<class A> class SegmentTree {
   }
 
 public:
-  SegmentTree(const vector<A>& a) {
+  SegmentTree(const vector<long long>& a) {
     while (size < a.size()) size *= 2;
     t.resize(2 * size - 1);
     build(0, 0, size, a);
