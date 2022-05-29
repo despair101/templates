@@ -7,7 +7,7 @@ public:
         return (p[u] == u ? u : p[u] = get(p[u]));
     }
 
-    inline int rank(int u) {
+    inline int getRank(int u) {
         return r[get(u)];
     }
 
