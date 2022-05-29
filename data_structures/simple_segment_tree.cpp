@@ -43,21 +43,15 @@ template<class A> class SegmentTree {
     }
 
     Node get(int l, int r, int x, int lx, int rx) {
-        if (lx >= l && rx <= r) {
-            return t[x];
-        }
-        if (lx >= r || rx <= l) {
-            return NEUTRAL;
-        }
+        if (lx >= l && rx <= r) return t[x];
+        if (lx >= r || rx <= l) return NEUTRAL;
         int mx = (lx + rx) / 2;
         return compose(get(l, r, 2 * x + 1, lx, mx), get(l, r, 2 * x + 2, mx, rx));
     }
 
 public:
     SegmentTree(const vector<A>& a) {
-        while (size < a.size()) {
-            size *= 2;
-        }
+        while (size < a.size()) size *= 2;
         t.resize(2 * size - 1);
         build(0, 0, size, a);
     }
