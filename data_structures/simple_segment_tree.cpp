@@ -1,7 +1,7 @@
 struct Node {
 }; //TODO
 
-const Node NEUTRAL{
+const Node NEUTRAL {
 }; //TODO
 
 template<class A> class SegmentTree {
