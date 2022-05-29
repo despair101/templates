@@ -5,10 +5,10 @@ struct Node {
     int cnt;
     int dp;
     int y;
-    Node* l;
-    Node* r;
+    Node* l = nullptr;
+    Node* r = nullptr;
 
-    Node(int x_, int cnt_ = 1) : x(x_), cnt(cnt_), dp(cnt_), y(rnd()), l(nullptr), r(nullptr) {}
+    Node(int x_, int cnt_ = 1) : x(x_), cnt(cnt_), dp(cnt_), y(rnd()) {}
     ~Node() {
         if (left) delete left;
         if (right) delete right;
