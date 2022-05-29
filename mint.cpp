@@ -1,7 +1,7 @@
 template<int mod> struct Mint {
     int x;
 
-    Mint(int x_) : x((x_ < 0 ? x_ % mod + mod : x_ % mod)) {}
+    Mint(int x_) : x(x_ < 0 ? x_ % mod + mod : x_ % mod) {}
 
     friend bool operator == (Mint a, Mint b) {
         return a.x == b.x;
