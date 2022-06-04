@@ -1,4 +1,4 @@
-struct MergeSortTree {
+class MergeSortTree {
     int size;
     vector<vector<int>> t;
 
@@ -16,20 +16,22 @@ struct MergeSortTree {
             merge(t[lt(x)].begin(), t[lt(x)].end(), t[rt(x)].begin(), t[rt(x)].end(), t[x].begin());
         }
     }
-
+    
     int get(int x, int lx, int rx, int l, int r, int mi, int ma) {
         if (lx >= r || rx <= l) return 0;
         if (lx >= l && rx <= r) return upper_bound(t[x].begin(), t[x].end(), ma) - lower_bound(t[x].begin(), t[x].end(), mi);
         return get(lt(x), lx, md(lx, rx), l, r, mi, ma) + get(rt(x), md(lx, rx), rx, l, r, mi, ma);
     }
-    int get(int l, int r, int mi, int ma) {
-        return get(0, 0, size, l, r, mi, ma);
-    }
 
+public:
     MergeSortTree(const vector<int>& a) : size(a.size()) {
         int ts = 1;
         while (ts < size) ts *= 2;
-        t.resize(2 * ts - 1);
+        t.resize(ts * 2 - 1);
         build(0, 0, size, a);
+    }
+
+    int get(int l, int r, int mi, int ma) {
+        return get(0, 0, size, l, r, mi, ma);
     }
 };
