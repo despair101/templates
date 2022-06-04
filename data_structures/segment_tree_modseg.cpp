@@ -4,14 +4,12 @@ class SegmentTree {
     long long add = 0;
   };
 
-  int size = 1;
+  int size;
   vector<Node> t;
 
   void build(int x, int lx, int rx, const vector<int>& a) {
     if (rx - lx == 1) {
-      if (lx < a.size()) {
-        t[x].mx = a[lx];
-      }
+      t[x].mx = a[lx];
     } else {
       int mx = (lx + rx) / 2;
       build(2 * x + 1, lx, mx, a);
