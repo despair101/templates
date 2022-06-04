@@ -27,7 +27,7 @@ public:
     MergeSortTree(const vector<int>& a) : size(a.size()) {
         int ts = 1;
         while (ts < size) ts *= 2;
-        t.resize(ts * 2 - 1);
+        t.resize(2 * ts - 1);
         build(0, 0, size, a);
     }
 
