@@ -21,7 +21,7 @@ public:
         return true;
     }
 
-    DSU(int n) : p(n), r(n), cnt(n) {
+    DSU(int n) : p(n), r(n, 1), cnt(n) {
         iota(p.begin(), p.end(), 0);
     }
 };
