@@ -1,10 +1,10 @@
 struct MergeSortTree {
+    int size;
+    vector<vector<int>> t;
+
     inline int lt(int x) { return 2 * x + 1; }
     inline int rt(int x) { return 2 * x + 2; }
     inline int md(int lx, int rx) { return (lx + rx) / 2; }
-
-    int size;
-    vector<vector<int>> t;
 
     void build(int x, int lx, int rx, const vector<int>& a) {
         if (rx - lx == 1) {
