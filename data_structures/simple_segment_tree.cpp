@@ -50,9 +50,10 @@ template<class A> class SegmentTree {
     }
 
 public:
-    SegmentTree(const vector<A>& a) {
-        while (size < a.size()) size *= 2;
-        t.resize(2 * size - 1);
+    SegmentTree(const vector<A>& a) : size(a.size()) {
+        int ts = 1;
+        while (ts < size) ts *= 2;
+        t.resize(2 * ts - 1);
         build(0, 0, size, a);
     }
 
