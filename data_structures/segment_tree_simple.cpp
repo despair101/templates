@@ -5,7 +5,7 @@ const Node NEUTRAL {
 }; //TODO
 
 template<class A> class SegmentTree {
-    int size = 1;
+    int size;
     vector<Node> t;
 
     inline Node compose(Node l, Node r) {
@@ -15,9 +15,7 @@ template<class A> class SegmentTree {
 
     void build(int x, int lx, int rx, const vector<A>& a) {
         if (rx - lx == 1) {
-            if (lx < a.size()) {
-                //TODO
-            } 
+            //TODO
         } else {
             int mx = (lx + rx) / 2;
             build(2 * x + 1, lx, mx, a);
