@@ -27,9 +27,9 @@ struct MergeSortTree {
     }
 
     MergeSortTree(const vector<int>& a) : size(a.size()) {
-        int tsize = 1;
-        while (tsize < size) tsize *= 2;
-        a.resize(tsize * 2 - 1);
+        int ts = 1;
+        while (ts < size) ts *= 2;
+        t.resize(ts * 2 - 1);
         build(0, 0, size, a);
     }
 };
