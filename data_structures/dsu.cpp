@@ -5,7 +5,7 @@ class DSU {
 
 public:
     int get(int u) {
-        return (p[u] == -1 ? u : p[u] = get(p[u]));
+        return (p[u] == u ? u : p[u] = get(p[u]));
     }
 
     inline int comps() { return cnt; }
@@ -21,5 +21,7 @@ public:
         return true;
     }
 
-    DSU(int n) : p(n, -1), r(n), cnt(n) {}
+    DSU(int n) : p(n), r(n), cnt(n) {
+        iota(p.begin(), p.end(), 0);
+    }
 };
