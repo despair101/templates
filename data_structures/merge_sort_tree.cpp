@@ -26,9 +26,10 @@ struct MergeSortTree {
         return get(0, 0, size, l, r, mi, ma);
     }
 
-    MergeSortTree(const vector<int>& a) {
-        size = sz(a);
-        t.resize(4 * size);
+    MergeSortTree(const vector<int>& a) : size(a.size()) {
+        int tsize = 1;
+        while (tsize < size) tsize *= 2;
+        a.resize(tsize * 2 - 1);
         build(0, 0, size, a);
     }
 };
