@@ -17,9 +17,7 @@ template<class A> class SegmentTree {
         if (rx - lx == 1) {
             if (lx < a.size()) {
                 //TODO
-            } else {
-                t[x] = NEUTRAL;
-            }
+            } 
         } else {
             int mx = (lx + rx) / 2;
             build(2 * x + 1, lx, mx, a);
