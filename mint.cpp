@@ -1,5 +1,5 @@
 template<int MOD> struct Mint {
-    int x;
+    int x = 0;
 
     Mint(int x_) : x((x_ < 0 ? x_ % MOD + MOD : x_ % MOD)) {}
     Mint() {}
@@ -16,8 +16,11 @@ template<int MOD> struct Mint {
     friend Mint operator *= (Mint& a, Mint b) { return a = (a * b); }
 
     Mint rev() {
-        Mint a = this->x, res = 1;
-        int n = MOD - 2;
+        return binPow(this->x, MOD - 2);
+    }
+
+    Mint binPow(int n) {
+        Mint res = 1, a = this->x;
         while (n) {
             if (n & 1) res *= a;
             a *= a;
