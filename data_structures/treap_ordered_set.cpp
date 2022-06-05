@@ -10,8 +10,8 @@ struct Node {
 
     Node(int x_, int cnt_ = 1) : x(x_), cnt(cnt_), dp(cnt_), y(rnd()) {}
     ~Node() {
-        if (left) delete left;
-        if (right) delete right;
+        if (l) delete l;
+        if (r) delete r;
     }
 };
 
