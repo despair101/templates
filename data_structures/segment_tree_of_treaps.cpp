@@ -15,7 +15,7 @@ class SegmentTreeOfTreaps {
     }
   }
  
-  int get_(int l, int r, int v, int x, int lx, int rx) { 
+  int get(int l, int r, int v, int x, int lx, int rx) { 
     int ans = 0;
     if (lx >= r || rx <= l) {
       ans = 0;
@@ -25,7 +25,7 @@ class SegmentTreeOfTreaps {
       t[x] = merge(t1, t2);
     } else {
       int mx = (lx + rx) / 2;
-      ans = get_(l, r, v, 2 * x + 1, lx, mx) + get_(l, r, v, 2 * x + 2, mx, rx);
+      ans = get(l, r, v, 2 * x + 1, lx, mx) + get(l, r, v, 2 * x + 2, mx, rx);
     }
     return ans;
   }
@@ -35,8 +35,8 @@ public:
     add(i, v, 0, 0, size);
   }
   
-  int get_(int l, int r, int v) {
-    return get_(l, r, v, 0, 0, size);
+  int get(int l, int r, int v) {
+    return get(l, r, v, 0, 0, size);
   }
   
   MergeSortTree(int n) : size(n), t(4 * n, nullptr) {}
