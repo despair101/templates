@@ -21,7 +21,7 @@ class SegmentTreeOfTreaps {
       ans = 0;
     } else if (lx >= l && rx <= r) {
       auto [t1, t2] = split(t[x], v);
-      ans = get(t1);
+      ans = getDp(t1);
       t[x] = merge(t1, t2);
     } else {
       int mx = (lx + rx) / 2;
