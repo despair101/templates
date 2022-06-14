@@ -24,9 +24,9 @@ using namespace std;
 #ifdef DESPAIR_101
 #include "debug_output.h"
 #include "gcc_functions.h"
+#define dbg(a) cerr << "\n" << #a << ":\n "; print(a); cerr << "\n"
 #else
-#define cerr if (false) cerr
-#define print(a)
+#define dbg(a)
 #endif
 
 typedef long long ll;
@@ -38,7 +38,6 @@ template<typename A> inline bool umin(A& x, A y) { if (y < x) { x = y; return tr
 
 //#define int ll
 #define sz(a) int(a.size())
-#define dbg(a) cerr << "\n" << #a << ":\n "; print(a); cerr << "\n"
 
 mt19937 rnd(101);
 
@@ -51,7 +50,7 @@ signed main() {
     cout << fixed << setprecision(20);
 
     int testsLimit = 1;
-    cin >> testsLimit;
+    //cin >> testsLimit;
     for (int test = 1; test <= testsLimit; ++test) {
         cerr << "_____Test #" << test << "_____\n";
         solve();
