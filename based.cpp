@@ -1,23 +1,6 @@
-#define _CRT_SECURE_NO_WARNINGS
 #define _USE_MATH_DEFINES
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
-#include <set>
-#include <map>
-#include <unordered_map>
-#include <unordered_set>
-#include <deque>
-#include <random>
-#include <iomanip>
-#include <cassert>
-#include <numeric>
-#include <string>
-#include <array>
-#include <bitset>
-#include <cstring>
-#include <climits>
+#include "bits/stdc++.h"
 
 using namespace std;
 
@@ -42,6 +25,8 @@ template<typename A> inline bool umin(A& x, A y) { if (y < x) { x = y; return tr
 mt19937 rnd(101);
 
 void solve() {
+    int a, b;
+    cin >> a >> b;
 }
 
 signed main() {
