@@ -1,22 +1,6 @@
 #pragma once
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
-#include <set>
-#include <map>
-#include <unordered_map>
-#include <unordered_set>
-#include <deque>
-#include <random>
-#include <iomanip>
-#include <cassert>
-#include <numeric>
-#include <string>
-#include <array>
-#include <bitset>
-#include <cstring>
-#include <climits>
+#include "bits/stdc++.h"
 
 using namespace std;
 
