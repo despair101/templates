@@ -1,5 +1,3 @@
-#define _USE_MATH_DEFINES
-
 #include "bits/stdc++.h"
 
 using namespace std;
@@ -25,8 +23,6 @@ template<typename A> inline bool umin(A& x, A y) { if (y < x) { x = y; return tr
 mt19937 rnd(101);
 
 void solve() {
-    int a, b;
-    cin >> a >> b;
 }
 
 signed main() {
