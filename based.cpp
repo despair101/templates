@@ -9,7 +9,7 @@ using namespace std;
 #define showTest(t) cerr << "_____Test #" << t << "_____\n"
 #else
 #define dbg(a)
-#define showTest(test)
+#define showTest(t)
 #endif
 
 typedef long long ll;
