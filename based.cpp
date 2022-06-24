@@ -31,7 +31,7 @@ signed main() {
     cout << fixed << setprecision(20);
 
     int testsCnt = 1;
-    cin >> testsCnt;
+    //cin >> testsCnt;
     for (int curTest = 1; curTest <= testsCnt; ++curTest) {
         showTest(curTest);
         solve();
