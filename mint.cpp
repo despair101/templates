@@ -16,7 +16,7 @@ template<int MOD> struct Mint {
     friend Mint operator *= (Mint& a, Mint b) { return a = (a * b); }
 
     Mint rev() {
-        return binPow(this->x, MOD - 2);
+        return binPow(MOD - 2);
     }
 
     Mint binPow(int n) {
