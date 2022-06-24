@@ -4,10 +4,12 @@ using namespace std;
 
 #ifdef DESPAIR_101
 #include "debug_output.h"
-#include "gcc_functions.h"
+#include "gcc_functions.h" 
 #define dbg(a) cerr << "\n" << #a << ":\n "; print(a); cerr << "\n"
+#define showTest(t) cerr << "_____Test #" << t << "_____\n"
 #else
 #define dbg(a)
+#define showTest(test)
 #endif
 
 typedef long long ll;
@@ -20,20 +22,18 @@ template<typename A> inline bool umin(A& x, A y) { if (y < x) { x = y; return tr
 //#define int ll
 #define sz(a) int(a.size())
 
-mt19937 rnd(101);
-
 void solve() {
-}
+}   
 
 signed main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);
     cout << fixed << setprecision(20);
 
-    int testsLimit = 1;
-    //cin >> testsLimit;
-    for (int test = 1; test <= testsLimit; ++test) {
-        cerr << "_____Test #" << test << "_____\n";
+    int testsCnt = 1;
+    cin >> testsCnt;
+    for (int curTest = 1; curTest <= testsCnt; ++curTest) {
+        showTest(curTest);
         solve();
     }
-}
+}   
