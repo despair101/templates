@@ -46,18 +46,19 @@ template<class A> class SegmentTree {
     }
 
 public:
-    SegmentTree(const vector<A>& a) : size(a.size()) {
-        int ts = 1;
-        while (ts < size) ts *= 2;
-        t.resize(2 * ts - 1);
-        build(0, 0, size, a);
-    }
-
     void change(int i, Node v) {
         change(i, v, 0, 0, size);
     }
 
     Node get(int l, int r) {
         return get(l, r, 0, 0, size);
+    }
+    
+    SegmentTree() {}
+    SegmentTree(const vector<A>& a) : size(a.size()) {
+        int ts = 1;
+        while (ts < size) ts *= 2;
+        t.resize(2 * ts - 1);
+        build(0, 0, size, a);
     }
 };
