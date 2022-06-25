@@ -56,9 +56,7 @@ public:
     
     SegmentTree() {}
     SegmentTree(const vector<A>& a) : size(a.size()) {
-        int ts = 1;
-        while (ts < size) ts *= 2;
-        t.resize(2 * ts - 1);
+        t.resize(4 * size);
         build(0, 0, size, a);
     }
 };
