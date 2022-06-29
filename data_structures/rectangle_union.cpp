@@ -3,13 +3,13 @@
 const long long LX = 0, RX = (1ll << 31);
 
 struct Node {
-    int min_v;
-    int add;
+    int min_v = 0;
+    int add = 0;
     long long cnt;
-    Node* l;
-    Node* r;
+    Node* l = nullptr;
+    Node* r = nullptr;
 
-    Node(long long lx, long long rx) : min_v(0), add(0), cnt(rx - lx), l(nullptr), r(nullptr) {}
+    Node(long long lx, long long rx) : cnt(rx - lx) {}
 };
 
 void compose(Node* nd) {
