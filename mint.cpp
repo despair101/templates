@@ -1,7 +1,7 @@
 template<int MOD> struct Mint {
     int x = 0;
 
-    Mint(int x_) : x((x_ < 0 ? x_ % MOD + MOD : x_ % MOD)) {}
+    Mint(long long x_) : x((x_ < 0 ? x_ % MOD + MOD : x_ % MOD)) {}
     Mint() {}
 
     friend bool operator == (Mint a, Mint b) { return a.x == b.x; }
@@ -19,7 +19,7 @@ template<int MOD> struct Mint {
         return binPow(MOD - 2);
     }
 
-    Mint binPow(int n) {
+    Mint binPow(long long n) {
         Mint res = 1, a = this->x;
         while (n) {
             if (n & 1) res *= a;
