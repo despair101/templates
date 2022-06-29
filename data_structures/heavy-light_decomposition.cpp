@@ -96,6 +96,7 @@ public:
         return ans;
     }
     
+    HLD() {}
     HLD() {
         preDfs(0, -1);
         buildDfs(0, -1);
