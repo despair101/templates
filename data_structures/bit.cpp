@@ -26,5 +26,6 @@ public:
         return i + 1;
     }
 
+    BIT() {}
     BIT(int n) : size(n), t(n) {}
 };
