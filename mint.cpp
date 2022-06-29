@@ -20,7 +20,7 @@ template<int MOD> struct Mint {
     }
 
     Mint binPow(long long n) {
-        Mint res = 1, a = this->x;
+        Mint res = 1, a = x;
         while (n) {
             if (n & 1) res *= a;
             a *= a;
