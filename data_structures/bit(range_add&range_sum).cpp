@@ -33,5 +33,6 @@ public:
         t2.assign(size, 0);
     }
 
+    BIT() {}
     BIT(int n) : size(n), t1(n), t2(n) {}
 }; 
