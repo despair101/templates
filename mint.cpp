@@ -12,7 +12,7 @@ template<int MOD> struct Mint {
     friend Mint operator - (Mint a, Mint b) { return (a.x - b.x < 0 ? a.x - b.x + MOD : a.x - b.x); }
     friend Mint operator -= (Mint& a, Mint b) { return a = (a - b); }
 
-    friend Mint operator * (Mint a, Mint b) { return (long long)(a.x) * (b.x) % MOD; }
+    friend Mint operator * (Mint a, Mint b) { return (long long)(a.x) * b.x % MOD; }
     friend Mint operator *= (Mint& a, Mint b) { return a = (a * b); }
 
     Mint rev() {
