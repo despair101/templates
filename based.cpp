@@ -19,6 +19,8 @@ typedef long double ld;
 template<typename A> inline bool umax(A& x, A y) { if (y > x) { x = y; return true; } return false; }
 template<typename A> inline bool umin(A& x, A y) { if (y < x) { x = y; return true; } return false; }
 
+mt19937 rnd(101);
+
 //#define int ll
 #define sz(a) int(a.size())
 
