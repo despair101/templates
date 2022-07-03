@@ -5,11 +5,8 @@ using namespace std;
 #ifdef DESPAIR_101
 #include "debug_output.h"
 #include "gcc_functions.h" 
-#define dbg(a) cerr << "\n" << #a << ":\n "; print(a); cerr << "\n"
-#define showTest(t) cerr << "_____Test #" << t << "_____\n"
 #else
-#define dbg(a)
-#define showTest(t)
+#define cerr if (false) cerr
 #endif
 
 typedef long long ll;
@@ -23,6 +20,7 @@ mt19937 rnd(101);
 
 //#define int ll
 #define sz(a) int(a.size())
+#define dbg(a) cerr << "\n" << #a << ":\n "; print(a); cerr << "\n"
 
 void solve() {
 }   
@@ -35,7 +33,7 @@ signed main() {
     int testsCnt = 1;
     //cin >> testsCnt;
     for (int curTest = 1; curTest <= testsCnt; ++curTest) {
-        showTest(curTest);
+        cerr << "_____Test #" << t << "_____\n";
         solve();
     }
 }   
