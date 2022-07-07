@@ -15,3 +15,9 @@ inline void * operator new(size_t n)
     return (void*)cur;
 }
 inline void operator delete(void*) { };
+
+/* strange floating-point optimization */
+#include <xmmintrin.h>
+int main() {
+    _MM_SET_FLUSH_ZERO_MODE(_MM_FLUSH_ZERO_ON);
+}
