@@ -4,7 +4,6 @@
 
 
 /* allocator */
-
 const int MAXMEM = 1e8;
 char mem[MAXMEM];
 int mempos = 0;
