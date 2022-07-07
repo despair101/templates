@@ -16,6 +16,7 @@ inline void * operator new(size_t n)
 }
 inline void operator delete(void*) { };
 
+
 /* strange floating-point optimization */
 #include <xmmintrin.h>
 int main() {
