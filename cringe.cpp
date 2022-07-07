@@ -1,6 +1,6 @@
 /* pragmas */
-#pragma GCC optimize("O3")
-#pragma GCC target("avx,avx2,bmi,bmi2")
+#pragma GCC optimize("O3,unroll-loops")
+#pragma GCC target("avx,avx2,abm,bmi,bmi2,lzcnt,popcnt,tune=native")
 
 
 /* allocator */
