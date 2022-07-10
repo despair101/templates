@@ -1,10 +1,10 @@
 struct SparseTable {
-    vector<vector<pair<int, int>>> dp;
+    vector<pair<int, int>> t;
  
-    SparseTable(int n) {
-        dp.assign(__lg(n) + 1, vector<pair<int, int>>(n));
+    SparseTable(int n, const vector<int>& a) {
+        t.assign(__lg(n) + 1, vector<pair<int, int>>(n));
         for (int i = 0; i < n; ++i) {
-            dp[0][i] = { d[i], i };
+            t[0][i] = { a[i], i };
         }
         for (int j = 1; j <= __lg(n); ++j) {
             for (int i = 0; i + (1 << j) <= n; ++i) {
