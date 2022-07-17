@@ -1,11 +1,9 @@
 #include "bits/stdc++.h"
 
-using namespace std;
-
 #ifdef DESPAIR_101
 #include "debug_output.h"
 #include "gcc_functions.h" 
-#define dbg(a) std::cerr << "\n" << #a << ":\n "; debug::print(a); cerr << "\n"
+#define dbg(a) std::cerr << "\n" << #a << ":\n "; debug::print(a); std::cerr << "\n"
 #define showTest(t) std::cerr << "_____Test #" << t << "_____\n"
 #else
 #define dbg(a)
