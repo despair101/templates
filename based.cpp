@@ -5,8 +5,8 @@ using namespace std;
 #ifdef DESPAIR_101
 #include "debug_output.h"
 #include "gcc_functions.h" 
-#define dbg(a) cerr << "\n" << #a << ":\n "; print(a); cerr << "\n"
-#define showTest(t) cerr << "_____Test #" << t << "_____\n"
+#define dbg(a) std::cerr << "\n" << #a << ":\n "; debug::print(a); cerr << "\n"
+#define showTest(t) std::cerr << "_____Test #" << t << "_____\n"
 #else
 #define dbg(a)
 #define showTest(t)
@@ -19,23 +19,23 @@ typedef long double ld;
 template<typename A> inline bool umax(A& x, A y) { if (y > x) { x = y; return true; } return false; }
 template<typename A> inline bool umin(A& x, A y) { if (y < x) { x = y; return true; } return false; }
 
-mt19937 rnd(101);
+std::mt19937 rnd(101);
 
 //#define int ll
 #define sz(a) int(a.size())
 
 void solve() {
-}   
+}
 
 signed main() {
-    cin.tie(nullptr);
-    ios::sync_with_stdio(false);
-    cout << fixed << setprecision(20);
+    std::cin.tie(nullptr);
+    std::ios::sync_with_stdio(false);
+    std::cout << std::fixed << std::setprecision(20);
 
     int testsCnt = 1;
-    //cin >> testsCnt;
+    //std::cin >> testsCnt;
     for (int curTest = 1; curTest <= testsCnt; ++curTest) {
         showTest(curTest);
         solve();
     }
-}   
+}
