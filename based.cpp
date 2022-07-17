@@ -1,5 +1,7 @@
 #include "bits/stdc++.h"
 
+using namespace std;
+
 #ifdef DESPAIR_101
 #include "debug_output.h"
 #include "gcc_functions.h" 
