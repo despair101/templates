@@ -6,7 +6,7 @@ struct Node {
 };
  
 struct PersistentSegmentTree {
-    int n, q, m;
+    int size;
  
     vector<Node> t;
     vector<int> roots;
@@ -46,18 +46,18 @@ struct PersistentSegmentTree {
     }
  
 public:
-    PersistentSegmentTree(int n_, int q_, int m_) : n(n_), q(q_), m(m_) {
+    PersistentSegmentTree(int n_) : size(n) {
         t.push_back(Node{ INT_MAX, INT_MIN, 0, 0 });
         roots.push_back(0);
     }
  
     int change(int i, int v) {
-        int ind = change(i, v, roots.back(), 0, n);
+        int ind = change(i, v, roots.back(), 0, size);
         roots.push_back(ind);
         return ind;
     }
  
     pair<int, int> get(int l, int r, int ind) {
-        return get(l, r, ind, 0, n);
+        return get(l, r, ind, 0, size);
     }
 };
