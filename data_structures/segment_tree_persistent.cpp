@@ -56,7 +56,7 @@ public:
         roots.push_back(ind);
     }
  
-    pair<int, int> get(int l, int r, int ind) {
-        return get(l, r, ind, 0, size);
+    pair<int, int> get(int l, int r, int op) {
+        return get(l, r, roots[op], 0, size);
     }
 };
