@@ -51,10 +51,9 @@ public:
         roots.push_back(0);
     }
  
-    int change(int i, int v) {
+    void change(int i, int v) {
         int ind = change(i, v, roots.back(), 0, size);
         roots.push_back(ind);
-        return ind;
     }
  
     pair<int, int> get(int l, int r, int ind) {
