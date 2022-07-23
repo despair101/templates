@@ -33,8 +33,8 @@ public:
         return get(l, r, 0, 0, size);
     }
  
-    SegmentTree() {}
-    SegmentTree(int n) : size(n) {
+    explicit SegmentTree() {}
+    explicit SegmentTree(int n) : size(n) {
         t.assign(4 * size, 0);
     }
 };
@@ -116,7 +116,8 @@ public:
         return v;
     }
  
-    HLD() {
+    explicit HLD() {}
+    explicit HLD() {
         calcTimes(0, -1);
         preDfs(0, -1);
         buildDfs(0, -1);
@@ -125,6 +126,6 @@ public:
 };
  
  
-bool anc(int u, int v) {
+bool isAnc(int u, int v) {
     return ti[u] <= ti[v] && to[v] <= to[u];
 }
