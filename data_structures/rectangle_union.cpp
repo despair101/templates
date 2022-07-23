@@ -9,7 +9,7 @@ struct Node {
     Node* l = nullptr;
     Node* r = nullptr;
 
-    Node(long long lx, long long rx) : cnt(rx - lx) {}
+    explicit Node(long long lx, long long rx) : cnt(rx - lx) {}
 };
 
 void compose(Node* nd) {
