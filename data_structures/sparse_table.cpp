@@ -1,12 +1,12 @@
 class SparseTable {
-    vector<pair<int, int>> t;
- 
+    vector<vector<pair<int, int>>> t;
+
 public:
     int get(int l, int r) {
-        return min(dp[le][l], dp[le][r - (1 << __lg(r - l)]).second;
+        return min(t[__lg(r - l)][l], t[__lg(r - l)][r - (1 << __lg(r - l))]).second;
     }
-    
-    explicit SparseTable() {}                                 
+
+    explicit SparseTable() {}
     explicit SparseTable(int n, const vector<int>& a) {
         t.assign(__lg(n) + 1, vector<pair<int, int>>(n));
         for (int i = 0; i < n; ++i) {
@@ -14,7 +14,7 @@ public:
         }
         for (int j = 1; j <= __lg(n); ++j) {
             for (int i = 0; i + (1 << j) <= n; ++i) {
-                dp[j][i] = min(dp[j - 1][i], dp[j - 1][i + (1 << (j - 1))]);
+                t[j][i] = min(t[j - 1][i], t[j - 1][i + (1 << (j - 1))]);
             }
         }
     }
