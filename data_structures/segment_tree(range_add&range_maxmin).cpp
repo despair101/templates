@@ -3,12 +3,11 @@ struct Node {
     int mxp;
     int mn;
     int mnp;
-    int ans;
 };
- 
-const int INF = 1e9; //TODO
- 
-struct SegmentTree {
+
+class SegmentTree {
+    const int INF = 1e9; //TODO
+    
     int size;
     vector<Node> t;
     vector<int> add;
@@ -19,7 +18,6 @@ struct SegmentTree {
             (fi.mx >= se.mx ? fi.mxp : se.mxp),
             min(fi.mn, se.mn) + pl,
             (fi.mn <= se.mn ? fi.mnp : se.mnp),
-            (fi.mx > se.mx ? fi.ans : se.ans)
         };
         return res;
     }
@@ -48,25 +46,25 @@ struct SegmentTree {
             t[x] = compose(t[2 * x + 1], t[2 * x + 2], add[x]);
         }
     }
-    void modify(int l, int r, int v) {
-        modify(l, r, v, 0, 0, size);
-    }
- 
+    
     Node get(int l, int r, int x, int lx, int rx) {
         if (lx >= r || rx <= l) return { -INF, N, INF, N, -1 };
         if (lx >= l && rx <= r) return t[x];
         int mx = (lx + rx) / 2;
         return compose(get(l, r, 2 * x + 1, lx, mx), get(l, r, 2 * x + 2, mx, rx), add[x]);
     }
+    
+public:
+    void modify(int l, int r, int v) {
+        modify(l, r, v, 0, 0, size);
+    }
+    
     Node get(int l, int r) {
         return get(l, r, 0, 0, size);
     }
- 
-    int getAns() {
-        return t[0].ans;
-    }
- 
-    SegmentTree(int n) : size(n) {
+    
+    explicit SegmentTree() {}
+    explicit SegmentTree(int n) : size(n) {
         t.resize(4 * size);
         add.assign(4 * size, 0);
         build(0, 0, size);
