@@ -46,11 +46,6 @@ struct PersistentSegmentTree {
     }
  
 public:
-    PersistentSegmentTree(int n_) : size(n) {
-        t.push_back(Node{ INT_MAX, INT_MIN, 0, 0 });
-        roots.push_back(0);
-    }
- 
     void change(int i, int v) {
         int ind = change(i, v, roots.back(), 0, size);
         roots.push_back(ind);
@@ -58,5 +53,11 @@ public:
  
     pair<int, int> get(int l, int r, int op) {
         return get(l, r, roots[op], 0, size);
+    }
+    
+    explicit PersistentSegmentTree() {}
+    explicit PersistentSegmentTree(int n_) : size(n) {
+        t.push_back(Node{ INT_MAX, INT_MIN, 0, 0 });
+        roots.push_back(0);
     }
 };
