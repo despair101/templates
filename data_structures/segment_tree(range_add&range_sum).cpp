@@ -28,15 +28,16 @@ class SegmentTree {
     }
  
 public:
-    SegmentTree(int n) : size(n) {
-        t.resize(4 * size);
-    }
- 
     void modify(int l, int r, int v) {
         modify(l, r, v, 0, 0, size);
     }
  
     long long get(int l, int r) {
         return get(l, r, 0, 0, size, 0);
+    }
+    
+    explicit SegmentTree() {}
+    explicit SegmentTree(int n) : size(n) {
+        t.resize(4 * size);
     }
 };
