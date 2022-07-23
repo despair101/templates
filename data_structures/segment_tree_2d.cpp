@@ -2,13 +2,6 @@ struct ST {
   int size;
   vector<int> t;
  
-  ST() {}
-  ST(const vector<int>& a) {
-    size = sz(a);
-    t.resize(4 * size);
-    build(0, 0, size, a);
-  }
- 
   void build(int x, int lx, int rx, const vector<int>& a) {
     if (rx - lx == 1) {
       if (lx < size) {
@@ -30,6 +23,13 @@ struct ST {
   }
   int get(int l, int r) {
     return get(l, r, 0, 0, size);
+  }
+  
+  explicit ST() {}
+  explicit ST(const vector<int>& a) {
+    size = sz(a);
+    t.resize(4 * size);
+    build(0, 0, size, a);
   }
 };
  
@@ -60,12 +60,6 @@ class MainSegmentTree {
   }
  
 public:
-  MainSegmentTree(const vector<vector<int>>& a) {
-    size1 = sz(a), size2 = sz(a[0]);
-    t.resize(4 * size1);
-    build(0, 0, size1, a);
-  }
- 
   int get(int l1, int r1, int l2, int r2, int x, int lx, int rx) {
     if (lx >= r1 || rx <= l1) return INF;
     if (lx >= l1 && rx <= r1) return t[x].st.get(l2, r2);
@@ -76,5 +70,12 @@ public:
   int get(int l1, int r1, int l2, int r2) {
     if (l1 >= r1 || l2 >= r2) return INF;
     return get(l1, r1, l2, r2, 0, 0, size1);
+  }
+  
+  explicit MainSegmentTree() {}
+  explicit MainSegmentTree(const vector<vector<int>>& a) {
+    size1 = sz(a), size2 = sz(a[0]);
+    t.resize(4 * size1);
+    build(0, 0, size1, a);
   }
 };
