@@ -8,7 +8,7 @@ struct Node {
     Node* l = nullptr;
     Node* r = nullptr;
 
-    Node(int x_, int cnt_ = 1) : x(x_), cnt(cnt_), dp(cnt_), y(rnd()) {}
+    explicit Node(int x_, int cnt_ = 1) : x(x_), cnt(cnt_), dp(cnt_), y(rnd()) {}
     ~Node() {
         if (l) delete l;
         if (r) delete r;
