@@ -54,8 +54,8 @@ public:
         return get(l, r, 0, 0, size);
     }
     
-    SegmentTree() {}
-    SegmentTree(const vector<A>& a) : size(a.size()) {
+    explicit SegmentTree() {}
+    explicit SegmentTree(const vector<A>& a) : size(a.size()) {
         t.resize(4 * size);
         build(0, 0, size, a);
     }
