@@ -1,6 +1,11 @@
-struct SparseTable {
+class SparseTable {
     vector<pair<int, int>> t;
  
+public:
+    int get(int l, int r) {
+        return min(dp[le][l], dp[le][r - (1 << __lg(r - l)]).second;
+    }
+                                     
     SparseTable(int n, const vector<int>& a) {
         t.assign(__lg(n) + 1, vector<pair<int, int>>(n));
         for (int i = 0; i < n; ++i) {
@@ -11,9 +16,5 @@ struct SparseTable {
                 dp[j][i] = min(dp[j - 1][i], dp[j - 1][i + (1 << (j - 1))]);
             }
         }
-    }
- 
-    int get(int l, int r) {
-        return min(dp[le][l], dp[le][r - (1 << __lg(r - l)]).second;
     }
 };
