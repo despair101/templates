@@ -39,5 +39,6 @@ public:
     return get(l, r, v, 0, 0, size);
   }
   
-  MergeSortTree(int n) : size(n), t(4 * n, nullptr) {}
+  explicit SegmentTreeOfTreaps() {}
+  explicit SegmentTreeOfTreaps(int n) : size(n), t(4 * n, nullptr) {}
 };
