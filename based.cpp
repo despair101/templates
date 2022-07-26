@@ -27,7 +27,7 @@ std::mt19937 rnd(101);
 void solve() {
 }
 
-int32_t main() {
+signed main() {
     std::cin.tie(nullptr);
     std::ios::sync_with_stdio(false);
     std::cout << std::fixed << std::setprecision(20);
