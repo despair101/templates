@@ -16,8 +16,8 @@ typedef long long ll;
 typedef unsigned long long ull;
 typedef long double ld;
 
-template<typename A> inline bool umax(A& x, A y) { if (y > x) { x = y; return true; } return false; }
-template<typename A> inline bool umin(A& x, A y) { if (y < x) { x = y; return true; } return false; }
+template<class A> inline bool umax(A& x, A y) { if (y > x) { x = y; return true; } return false; }
+template<class A> inline bool umin(A& x, A y) { if (y < x) { x = y; return true; } return false; }
 
 std::mt19937 rnd(101);
 
@@ -27,7 +27,7 @@ std::mt19937 rnd(101);
 void solve() {
 }
 
-signed main() {
+int32_t main() {
     std::cin.tie(nullptr);
     std::ios::sync_with_stdio(false);
     std::cout << std::fixed << std::setprecision(20);
