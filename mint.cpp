@@ -1,9 +1,6 @@
 template<int MOD> struct Mint {
     int x = 0;
 
-    Mint(long long x_) : x((x_ < 0 ? x_ % MOD + MOD : x_ % MOD)) {}
-    Mint() {}
-
     friend bool operator == (Mint a, Mint b) { return a.x == b.x; }
 
     friend Mint operator + (Mint a, Mint b) { return (a.x + b.x >= MOD ? a.x + b.x - MOD : a.x + b.x); }
@@ -15,6 +12,8 @@ template<int MOD> struct Mint {
     friend Mint operator * (Mint a, Mint b) { return (long long)(a.x) * b.x % MOD; }
     friend Mint operator *= (Mint& a, Mint b) { return a = (a * b); }
 
+    
+    
     Mint inv() {
         return binPow(MOD - 2);
     }
@@ -37,4 +36,7 @@ template<int MOD> struct Mint {
         out << a.x;
         return out;
     }
+    
+    Mint() {}
+    Mint(long long x_) : x((x_ < 0 ? x_ % MOD + MOD : x_ % MOD)) {}
 };
