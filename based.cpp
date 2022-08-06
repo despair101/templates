@@ -13,6 +13,7 @@ using namespace std;
 #endif
 
 typedef long long ll;
+typedef unsigned int uint;
 typedef unsigned long long ull;
 typedef long double ld;
 
@@ -25,6 +26,8 @@ std::mt19937 rnd(101);
 #define sz(a) int(a.size())
 
 void solve() {
+    uint a;
+
 }
 
 signed main() {
