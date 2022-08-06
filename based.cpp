@@ -26,8 +26,6 @@ std::mt19937 rnd(101);
 #define sz(a) int(a.size())
 
 void solve() {
-    uint a;
-
 }
 
 signed main() {
