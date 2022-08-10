@@ -119,6 +119,7 @@ public:
     explicit HLD() {
         calcTimes(0, -1);
         preDfs(0, -1);
+        t = 0;
         buildDfs(0, -1);
         st = SegmentTree(sz(euler));
     }
