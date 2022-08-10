@@ -116,7 +116,6 @@ public:
         return v;
     }
  
-    explicit HLD() {}
     explicit HLD() {
         calcTimes(0, -1);
         preDfs(0, -1);
