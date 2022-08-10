@@ -47,7 +47,7 @@ void calcTimes(int u, int p) {
     ti[u] = t++;
     for (int v : g[u]) {
         if (v != p) {
-            calc(v, u);
+            calcTimes(v, u);
         }
     }
     to[u] = t++;
