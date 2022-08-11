@@ -97,14 +97,16 @@ public:
     }
  
     int get(int u, int v) {
+        int l = lca(u, v);
+ 
         int ans = 0;
         while (up[u] != up[v]) {
             if (de[up[u]] < de[up[v]]) swap(u, v);
-            ans += st.get(tin[up[u]], tin[u] + 1);
+            ans += st.get(tin[up[u]] + (up[u] == l), tin[u] + 1);
             u = pa[up[u]];
         }
         if (de[u] < de[v]) swap(u, v);
-        ans += st.get(tin[v], tin[u] + 1);
+        ans += st.get(tin[v] + 1, tin[u] + 1);
         return ans;
     }
  
