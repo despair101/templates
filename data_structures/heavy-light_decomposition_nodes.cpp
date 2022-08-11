@@ -11,11 +11,8 @@ class SegmentTree {
             t[x] = v;
         } else {
             int mx = (lx + rx) / 2;
-            if (i < mx) {
-                change(i, v, 2 * x + 1, lx, mx);
-            } else {
-                change(i, v, 2 * x + 2, mx, rx);
-            }
+            if (i < mx) change(i, v, 2 * x + 1, lx, mx);
+            else change(i, v, 2 * x + 2, mx, rx);
             t[x] = compose(t[2 * x + 1], t[2 * x + 2]);
         }
     }
