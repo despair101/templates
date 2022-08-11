@@ -38,7 +38,7 @@ public:
 
     explicit SegmentTree() {}
     explicit SegmentTree(int n) : size(n) {
-        t.assign(4 * size, 1);
+        t.assign(4 * size, 0);
     }
 };
 
