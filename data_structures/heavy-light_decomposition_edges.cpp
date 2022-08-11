@@ -92,7 +92,7 @@ struct HLD {
 
     ll get(int u, int v) {
         int l = lca(u, v);
-        ll ans = 0; 
+        ll ans = 0;
         while (up[u] != up[v]) {
             if (de[up[u]] < de[up[v]]) swap(u, v);
             ans = compose(ans, st.get(ti[up[u]] + (up[u] == l), ti[u] + 1));
