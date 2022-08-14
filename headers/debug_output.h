@@ -1,26 +1,47 @@
 #pragma once
 
-#include "bits/stdc++.h"
+namespace debug {
+    template<class A> void print(A a);
+    template<class A, class B> void print(std::pair<A, B> a);
+    template<class A, class B, class C> void print(std::tuple<A, B, C> a);
+    template<class A, class B> void print(std::set<A, B> a);
+    template<class A, class B> void print(std::multiset<A, B> a);
+    template<class A, class B, class C> void print(std::map<A, B, C> a);
+    template<class A> void print(std::unordered_set<A> a);
+    template<class A> void print(std::unordered_multiset<A> a);
+    template<class A, class B> void print(std::unordered_map<A, B> a);
+    template<class A> void print(std::vector<A> a);
+    template<class A> void print(std::deque<A> a);
+    template<class A> void print(A a) { std::cerr << a; }
 
-using namespace std;
-
-template<class A> void print(A a);
-template<class A, class B> void print(pair<A, B> a);
-template<class A, class B> void print(set<A, B> a);
-template<class A, class B> void print(multiset<A, B> a);
-template<class A, class B, class C> void print(map<A, B, C> a);
-template<class A> void print(unordered_set<A> a);
-template<class A> void print(unordered_multiset<A> a);
-template<class A, class B> void print(unordered_map<A, B> a);
-template<class A> void print(vector<A> a);
-template<class A> void print(deque<A> a);
-template<class A> void print(A a) { cerr << a; }
-template<class A, class B> void print(pair<A, B> a) { cerr << "("; print(a.first); cerr << " "; print(a.second); cerr << ")"; }
-template<class A> void print(vector<A> a) { for (A b : a) { print(b); cerr << " "; }; cerr << "\n"; }
-template<class A> void print(deque<A> a) { for (A b : a) { print(b); cerr << " "; }; cerr << "\n"; }
-template<class A, class B> void print(set<A, B> a) { for (A b : a) { print(b); cerr << " "; }; cerr << "\n"; }
-template<class A, class B> void print(multiset<A, B> a) { for (A b : a) { print(b); cerr << " "; }; cerr << "\n"; }
-template<class A, class B, class C> void print(map<A, B, C> a) { for (pair<A, B> b : a) { print(b); cerr << ' '; }; cerr << "\n"; }
-template<class A> void print(unordered_set<A> a) { for (A b : a) { print(b); cerr << " "; }; cerr << "\n"; }
-template<class A> void print(unordered_multiset<A> a) { for (A b : a) { print(b); cerr << " "; }; cerr << "\n"; }
-template<class A, class B> void print(unordered_map<A, B> a) { for (pair<A, B> b : a) { print(b); cerr << " "; }; cerr << "\n"; }
+    template<class A, class B> void print(std::pair<A, B> a) {
+        std::cerr << "("; print(a.first); std::cerr << " "; print(a.second); std::cerr << ")";
+    }
+    template<class A, class B, class C> void print(std::tuple<A, B, C> a) {
+        std::cerr << '(' << get<0>(a) << ' ' << get<1>(a) << ' ' << get<2>(a) << ')';
+    }
+    template<class A> void print(std::vector<A> a) {
+        for (A b : a) { print(b); std::cerr << " "; }; std::cerr << "\n";
+    }
+    template<class A> void print(std::deque<A> a) {
+        for (A b : a) { print(b); std::cerr << " "; }; std::cerr << "\n";
+    }
+    template<class A, class B> void print(std::set<A, B> a) {
+        for (A b : a) { print(b); std::cerr << " "; }; std::cerr << "\n";
+    }
+    template<class A, class B> void print(std::multiset<A, B> a) {
+        for (A b : a) { print(b); std::cerr << " "; }; std::cerr << "\n";
+    }
+    template<class A, class B, class C> void print(std::map<A, B, C> a) {
+        for (std::pair<A, B> b : a) { print(b); std::cerr << ' '; }; std::cerr << "\n";
+    }
+    template<class A> void print(std::unordered_set<A> a) {
+        for (A b : a) { print(b); std::cerr << " "; }; std::cerr << "\n";
+    }
+    template<class A> void print(std::unordered_multiset<A> a) {
+        for (A b : a) { print(b); std::cerr << " "; }; std::cerr << "\n";
+    }
+    template<class A, class B> void print(std::unordered_map<A, B> a) {
+        for (std::pair<A, B> b : a) { print(b); std::cerr << " "; }; std::cerr << "\n";
+    }
+}
