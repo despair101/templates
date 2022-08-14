@@ -8,6 +8,7 @@ int __builtin_popcount(int x) {
     }
     return cnt;
 }
+
 int __builtin_popcountll(long long x) {
     int cnt = 0;
     while (x) {
@@ -16,6 +17,7 @@ int __builtin_popcountll(long long x) {
     }
     return cnt;
 }
+
 int __builtin_ctz(int x) {
     int cnt = 0;
     for (int i = 0; i <= 31; ++i, ++cnt) {
@@ -23,6 +25,7 @@ int __builtin_ctz(int x) {
     }
     return cnt;
 }
+
 int __builtin_ctzll(long long x) {
     int cnt = 0;
     for (int i = 0; i <= 63; ++i, ++cnt) {
@@ -30,6 +33,7 @@ int __builtin_ctzll(long long x) {
     }
     return cnt;
 }
+
 int __builtin_clz(int x) {
     int cnt = 0;
     for (int i = 31; i >= 0; --i, ++cnt) {
@@ -37,6 +41,7 @@ int __builtin_clz(int x) {
     }
     return cnt;
 }
+
 int __builtin_clzll(long long x) {
     int cnt = 0;
     for (int i = 63; i >= 0; --i, ++cnt) {
@@ -44,6 +49,7 @@ int __builtin_clzll(long long x) {
     }
     return cnt;
 }
+
 int __lg(long long x) {
     int cnt = 0;
     for (int i = 1; i < 63; ++i, ++cnt) {
