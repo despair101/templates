@@ -1,10 +1,12 @@
-struct Node {
-}; //TODO
-
-const Node NEUTRAL {
-}; //TODO
-
 template<class A> class SegmentTree {
+public:
+    struct Node {
+    }; //TODO
+
+    const Node NEUTRAL {
+    }; //TODO
+    
+private:
     int size;
     vector<Node> t;
 
