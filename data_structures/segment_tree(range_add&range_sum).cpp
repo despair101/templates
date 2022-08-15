@@ -1,9 +1,11 @@
 class SegmentTree {
+public:
     struct Node {
         long long sum = 0;
         long long add = 0;
     };
- 
+    
+private:
     int size;
     vector<Node> t;
  
