@@ -21,7 +21,9 @@ struct Node {
     Node(Line line_) : line(line_), l(nullptr), r(nullptr) {};
 };
  
-void insert(Node* t, Line line, int lx = 0, int rx = 1e5) {
+const int N = 1e5; // TODO
+
+void insert(Node* t, Line line, int lx = 0, int rx = N) {
     int mx = (lx + rx) / 2;
     if (line(mx) < t->line(mx)) swap(t->line, line);
     if (lx == rx || line.k == t->line.k) return;
@@ -35,7 +37,7 @@ void insert(Node* t, Line line, int lx = 0, int rx = 1e5) {
     }
 }
  
-ll get(Node* t, int x, int lx = 0, int rx = 1e5) {
+ll get(Node* t, int x, int lx = 0, int rx = N) {
     ll res = t->line(x);
     int mx = (lx + rx) / 2;
     if (lx == rx) return res;
