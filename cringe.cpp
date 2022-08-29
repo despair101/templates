@@ -1,6 +1,14 @@
 /* pragmas */
 #pragma GCC optimize("O3,unroll-loops")
 #pragma GCC target("avx,avx2,abm,bmi,bmi2,lzcnt,popcnt,tune=native")
+//or
+#pragma GCC optimize("Ofast")
+#pragma GCC optimize("no-stack-protector")
+#pragma GCC optimize("unroll-loops")
+#pragma GCC optimize("unswitch-loops")
+#pragma GCC optimize("fast-math")
+#pragma GCC optimize("rename-registers")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2")
 
 
 /* allocator */
