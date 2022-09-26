@@ -41,7 +41,7 @@ struct ConvexHull {
         v.push_back(li);
     }
 
-    int getMin(int x) {
+    ll getMin(int x) {
         return v[upper_bound(p.begin(), p.end(), x) - p.begin() - 1](x);
     }
 };
