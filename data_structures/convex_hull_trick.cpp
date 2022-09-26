@@ -16,6 +16,7 @@ struct Line {
     ll b;
 
     ll intersect(Line y) {
+        assert(k != y.k && "EQUAL LINE COEFFS");
         return div_ceil(y.b - b, k - y.k);
     }
 
