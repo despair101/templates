@@ -1,47 +1,78 @@
-struct Line {
-    ll k, b;
- 
-    Line(ll k_, ll b_) : k(k_), b(b_) {}
- 
-    friend ld operator&(Line A, Line B) {
-        return ld(B.b - A.b) / (A.k - B.k);
+int div_ceil(int a, int b) {
+    if (b < 0) {
+        a = -a;
+        b = -b;
     }
-    ll operator()(ll x) {
+
+    if (a >= 0) {
+        return (a + b - 1) / b;
+    } else {
+        return a / b;
+    }
+}
+
+struct Line {
+    int k;
+    int b;
+
+    ld intersect(Line l) {
+        return ld(l.b - b) / (k - l.k);
+    }
+
+    int operator()(int x) {
         return k * x + b;
     }
-    //k1x + b1 = k2x + b2
-    //x(k1 - x2) = b2-b1
-};
- 
-struct Node {
-    Line line;
-    Node* l;
-    Node* r;
- 
-    Node(Line line_) : line(line_), l(nullptr), r(nullptr) {};
-};
- 
-const int N = 1e5; // TODO
 
-void insert(Node* t, Line line, int lx = 0, int rx = N) {
-    int mx = (lx + rx) / 2;
-    if (line(mx) < t->line(mx)) swap(t->line, line);
-    if (lx == rx || line.k == t->line.k) return;
-    ll i = (line & t->line);
-    if (i < mx) {
-        if (!t->l) t->l = new Node(line);
-        insert(t->l, line, lx, mx);
-    } else if (i > mx) {
-        if (!t->r) t->r = new Node(line);
-        insert(t->r, line, mx + 1, rx);
+    bool operator < (Line l) const {
+        return make_pair(k, b) < make_pair(l.k, l.b);
     }
-}
- 
-ll get(Node* t, int x, int lx = 0, int rx = N) {
-    ll res = t->line(x);
-    int mx = (lx + rx) / 2;
-    if (lx == rx) return res;
-    if (x <= mx && t->l) res = min(res, get(t->l, x, lx, mx));
-    if (x > mx && t->r) res = min(res, get(t->r, x, mx + 1, rx));
-    return res;
-}
+};
+
+const int LX = -1e5, RX = 1e5;
+
+struct LiChaoTree {
+    struct Node {
+        Line li;
+        Node* l = nullptr;
+        Node* r = nullptr;
+
+        Node(Line li_) : li(li_) {}
+    };
+
+    Node* root = nullptr;
+
+    int getMin(Node* t, int i, int lx, int rx) {
+        if (!t) return LLONG_MAX;
+        int mx = div_ceil(lx + rx, 2);
+        if (i < mx) {
+            return min(t->li(i), getMin(t->l, i, lx, mx - 1));
+        } else {
+            return min(t->li(i), getMin(t->r, i, mx, rx));
+        }
+    }
+    int getMin(int i) {
+        return getMin(root, i, LX, RX);
+    }
+
+    Node* insert(Node* t, Line a, int lx, int rx) {
+        if (!t) {
+            t = new Node(a);
+        } else {
+            int mx = div_ceil(lx + rx, 2);
+            if (t->li(mx) > a(mx)) {
+                swap(t->li, a);
+            }
+            if (lx < rx) {
+                if (a.k > t->li.k) {
+                    t->l = insert(t->l, a, lx, mx - 1);
+                } else if (a.k < t->li.k) {
+                    t->r = insert(t->r, a, mx, rx);
+                }
+            }
+        }
+        return t;
+    }
+    void insert(Line a) {
+        root = insert(root, a, LX, RX);
+    }
+};
