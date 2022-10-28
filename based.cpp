@@ -1,4 +1,5 @@
 #include "bits/stdc++.h"
+using namespace std;
 
 #ifdef DESPAIR_101
 #include "debug_output.h"
@@ -9,8 +10,6 @@
 #define dbg(a)
 #define showTest(t)
 #endif
-
-using namespace std;
 
 typedef long long ll;
 typedef unsigned int uint;
