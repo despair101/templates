@@ -1,4 +1,4 @@
-//
+//https://github.com/despair101/templates/blob/main/mint.cpp
 const int MOD = 1'000'000'007;
 
 vector<Mint<MOD>> F, IF;
