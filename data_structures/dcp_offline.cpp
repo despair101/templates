@@ -44,6 +44,7 @@ struct SegmentTree {
         insert(l, r, e, 2 * x + 2, mx, rx);
     }
     void insert(int l, int r, pair<int, int> e) {
+        if (e.first > e.second) swap(e.first, e.second);
         insert(l, r, e, 0, 0, size);
     }
 
