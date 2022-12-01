@@ -44,7 +44,11 @@ public:
 
 struct HLD {
     int t = 0;
-    vector<int> de, up, ti, si, pa;
+    vector<int> de;
+    vector<int> up;
+    vector<int> ti;
+    vector<int> si;
+    vector<int> pa;
     vector<vector<int>> g;
     SegmentTree st;
 
