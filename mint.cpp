@@ -34,7 +34,7 @@ template<int MOD> struct Mint {
         out << a.x;
         return out;
     }
-    
+
     Mint() {}
     Mint(long long x_) : x((x_ < 0 ? x_ % MOD + MOD : x_ % MOD)) {}
 };
