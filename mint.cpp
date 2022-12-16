@@ -37,7 +37,7 @@ template<int MOD> struct Mint {
 
     Mint() {}
     Mint(long long x_) {
-        if (abs(x_) > MOD) x_ %= MOD;
+        if (abs(x_) >= MOD) x_ %= MOD;
         x = (x_ < 0 ? x_ + MOD : x_);
     }
 };
