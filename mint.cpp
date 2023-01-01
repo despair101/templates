@@ -13,10 +13,10 @@ template<int MOD> struct Mint {
     friend Mint operator *= (Mint& a, Mint b) { return a = (a * b); }
 
     Mint inv() {
-        return binPow(MOD - 2);
+        return pow(MOD - 2);
     }
 
-    Mint binPow(long long n) {
+    Mint pow(long long n) {
         Mint res = 1, a = x;
         while (n) {
             if (n & 1) res *= a;
