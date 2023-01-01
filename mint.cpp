@@ -3,6 +3,7 @@ struct Mint {
     int x = 0;
 
     friend bool operator == (Mint a, Mint b) { return a.x == b.x; }
+    friend bool operator != (Mint a, Mint b) { return a.x != b.x; }
 
     friend Mint operator + (Mint a, Mint b) { return (a.x + b.x >= MOD ? a.x + b.x - MOD : a.x + b.x); }
     friend Mint operator += (Mint& a, Mint b) { return a = (a + b); }
