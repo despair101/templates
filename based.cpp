@@ -11,8 +11,8 @@ using namespace std;
 #define dbg(x) std::cerr << "\n" << #x << ":\n "; debug::print(x); std::cerr << "\n"
 #define showTest(x) std::cerr << "_____Test #" << x << "_____\n"
 #else
-#define dbg(a)
-#define showTest(t)
+#define dbg(x)
+#define showTest(x)
 #endif
 
 typedef long long ll;
