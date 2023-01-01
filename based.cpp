@@ -8,8 +8,8 @@ using namespace std;
 #ifdef DESPAIR_101
 #include "debug_output.h"
 #include "gcc_functions.h"
-#define dbg(a) std::cerr << "\n" << #a << ":\n "; debug::print(a); std::cerr << "\n"
-#define showTest(t) std::cerr << "_____Test #" << t << "_____\n"
+#define dbg(x) std::cerr << "\n" << #x << ":\n "; debug::print(x); std::cerr << "\n"
+#define showTest(x) std::cerr << "_____Test #" << x << "_____\n"
 #else
 #define dbg(a)
 #define showTest(t)
@@ -28,7 +28,7 @@ inline bool umin(A& x, A y) { if (y < x) { x = y; return true; } return false; }
 std::mt19937 rnd(101);
 
 //#define int ll
-#define sz(a) int(a.size())
+#define sz(x) int(x.size())
 
 void solve() {
 }
