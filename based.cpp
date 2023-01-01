@@ -1,3 +1,7 @@
+#ifndef DESPAIR_101
+#pragma GCC optimize("O3")
+#endif
+
 #include "bits/stdc++.h"
 using namespace std;
 
