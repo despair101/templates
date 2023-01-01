@@ -1,4 +1,5 @@
-template<int MOD> struct Mint {
+template<int MOD>
+struct Mint {
     int x = 0;
 
     friend bool operator == (Mint a, Mint b) { return a.x == b.x; }
