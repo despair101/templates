@@ -16,7 +16,8 @@ public:
         return get(r, mi, ma) - get(l - 1, mi, ma);
     }
 
-    BIT_2D(const vector<int>& a) : size(a.size()), t(a.size()) {
+    explicit BIT_2D() {}
+    explicit BIT_2D(const vector<int>& a) : size(a.size()), t(a.size()) {
         for (int i = 0; i < size; ++i) {
             for (int j = i; j < size; j |= j + 1) {
                 t[j].push_back(a[i]);
