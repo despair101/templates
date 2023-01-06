@@ -7,7 +7,8 @@ public:
     }
 
     explicit SparseTable() {}
-    explicit SparseTable(int n, const vector<int>& a) {
+    explicit SparseTable(const vector<int>& a) {
+        int n = a.size();
         t.assign(__lg(n) + 1, vector<pair<int, int>>(n));
         for (int i = 0; i < n; ++i) {
             t[0][i] = { a[i], i };
