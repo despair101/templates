@@ -3,7 +3,8 @@ class SparseTable {
 
 public:
     int get(int l, int r) {
-        return min(t[__lg(r - l)][l], t[__lg(r - l)][r - (1 << __lg(r - l))]).second;
+        int pw = __lg(r - l);
+        return min(t[pw][l], t[pw][r - (1 << pw)]).second;
     }
 
     explicit SparseTable() {}
