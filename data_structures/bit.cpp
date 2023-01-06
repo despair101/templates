@@ -1,4 +1,5 @@
-template<class A> class BIT {
+template<class A>
+class BIT {
     int size;
     vector<A> t;
 
@@ -17,7 +18,7 @@ public:
     int lb(int sum) {
         if (get(0, size - 1) < sum) return -1;
         int i = -1;
-        for (int l = 27; l >= 0; --l) {
+        for (int l = __lg(size); l >= 0; --l) {
             if (i + (1 << l) < size && sum > t[i + (1 << l)]) {
                 i += (1 << l);
                 sum -= t[i];
