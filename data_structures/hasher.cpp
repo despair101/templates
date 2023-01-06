@@ -1,5 +1,6 @@
 //Mint: https://github.com/despair101/templates/blob/main/mint.cpp
-template<int MOD, int P> struct Hasher {
+template <int MOD, int P>
+struct Hasher {
     int size;
     vector<Mint<MOD>> h, p;
 
