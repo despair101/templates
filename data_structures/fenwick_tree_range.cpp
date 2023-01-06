@@ -1,4 +1,4 @@
-class BIT {
+class FenwickTreeRange {
     int size;
     vector<long long> t1, t2;
 
@@ -33,6 +33,6 @@ public:
         t2.assign(size, 0);
     }
 
-    explicit BIT() {}
-    explicit BIT(int n) : size(n), t1(n), t2(n) {}
+    explicit FenwickTreeRange() {}
+    explicit FenwickTreeRange(int n) : size(n), t1(n), t2(n) {}
 }; 
