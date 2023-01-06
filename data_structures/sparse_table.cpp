@@ -1,14 +1,14 @@
 class SparseTable {
     vector<vector<pair<int, int>>> t;
+    
+    pair<int, int> compose(const& pair<int, int> f, const& pair<int, int> s) {
+        return min(f, s);
+    }
 
 public:
     pair<int, int> get(int l, int r) {
         int pw = __lg(r - l);
         return compose(t[pw][l], t[pw][r - (1 << pw)]);
-    }
-    
-    pair<int, int> compose(const& pair<int, int> f, const& pair<int, int> s) {
-        return min(f, s);
     }
 
     explicit SparseTable() {}
