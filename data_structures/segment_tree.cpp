@@ -1,4 +1,5 @@
-template<class A> class SegmentTree {
+template<class A> 
+class SegmentTree {
 public:
     struct Node {
     }; //TODO
