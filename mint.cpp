@@ -1,4 +1,4 @@
-template<int MOD>
+template <int MOD>
 struct Mint {
     int x = 0;
 
