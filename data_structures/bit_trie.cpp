@@ -1,5 +1,5 @@
-// be careful with data types!
-template<int LG> struct BitTrie {
+template <int LG> 
+struct BitTrie {
     struct Node {
         int dp = 0;
         int nx[2];
