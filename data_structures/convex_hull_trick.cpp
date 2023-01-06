@@ -1,4 +1,4 @@
-inline ll div_ceil(ll a, ll b) {
+inline ll divCeil(ll a, ll b) {
     if (b < 0) {
         b = -b;
         a = -a;
