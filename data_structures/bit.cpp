@@ -1,5 +1,5 @@
 template<class A>
-class BIT {
+class FenwickTree {
     int size;
     vector<A> t;
 
@@ -27,6 +27,6 @@ public:
         return i + 1;
     }
 
-    explicit BIT() {}
-    explicit BIT(int n) : size(n), t(n) {}
+    explicit FenwickTree() {}
+    explicit FenwickTree(int n) : size(n), t(n) {}
 };
