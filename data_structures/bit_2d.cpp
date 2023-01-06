@@ -1,3 +1,4 @@
+template <class A>
 class BIT_2D {
     int size;
     vector<vector<int>> t;
