@@ -14,6 +14,18 @@ class SegmentTreeOfTreaps {
       }
     }
   }
+
+  void remove(int i, int v, int x, int lx, int rx) {
+    t[x] = erase(t[x], v);
+    if (rx - lx > 1) {
+      int mx = (lx + rx) / 2;
+      if (i < mx) {
+        remove(i, v, 2 * x + 1, lx, mx);
+      } else {
+        remove(i, v, 2 * x + 2, mx, rx);
+      }
+    }
+  }
  
   int get(int l, int r, int v, int x, int lx, int rx) { 
     int ans = 0;
@@ -33,6 +45,10 @@ class SegmentTreeOfTreaps {
 public:
   void add(int i, int v) {
     add(i, v, 0, 0, size);
+  }
+
+  void remove(int i, int v) {
+    remove(i, v, 0, 0, size);
   }
   
   int get(int l, int r, int v) {
