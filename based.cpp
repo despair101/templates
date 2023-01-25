@@ -27,7 +27,7 @@ inline bool umin(A& x, A y) { if (y < x) { x = y; return true; } return false; }
 
 std::mt19937 rnd(101);
 
-//#define int ll
+// #define int ll
 #define sz(x) int(x.size())
 
 void solve() {
@@ -39,7 +39,7 @@ signed main() {
     std::cout << std::fixed << std::setprecision(20);
 
     int testsCnt = 1;
-    //std::cin >> testsCnt;
+    // std::cin >> testsCnt;
     for (int curTest = 1; curTest <= testsCnt; ++curTest) {
         showTest(curTest);
         solve();
