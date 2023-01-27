@@ -34,5 +34,5 @@ public:
     }
 
     explicit FenwickTreeRange() {}
-    explicit FenwickTreeRange(int n) : size(n), t1(n), t2(n) {}
+    explicit FenwickTreeRange(int n) : size(n), t1(size), t2(size) {}
 }; 
