@@ -26,9 +26,7 @@ struct ST {
   }
   
   explicit ST() {}
-  explicit ST(const vector<int>& a) {
-    size = sz(a);
-    t.resize(4 * size);
+  explicit ST(const vector<int>& a) : size(a.size()), t(4 * size) {
     build(0, 0, size, a);
   }
 };
