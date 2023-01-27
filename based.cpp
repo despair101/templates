@@ -20,9 +20,9 @@ typedef unsigned int uint;
 typedef unsigned long long ull;
 typedef long double ld;
 
-template<class A>
+template <class A>
 inline bool umax(A& x, A y) { if (y > x) { x = y; return true; } return false; }
-template<class A>
+template <class A>
 inline bool umin(A& x, A y) { if (y < x) { x = y; return true; } return false; }
 
 std::mt19937 rnd(101);
