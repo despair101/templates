@@ -13,10 +13,10 @@ public:
         return compose(t[pw][l], t[pw][r - (1 << pw)]);
     }
 
-    explicit SparseTable() {}
+    SparseTable() = default;
     explicit SparseTable(const vector<A>& a) : size(a.size()), t(__lg(size) + 1, vector<pair<A, int>>(size)) {
         for (int i = 0; i < size; ++i) {
-            t[0][i] = { a[i], i };
+            t[0][i] = pair(a[i], i);
         }
         for (int j = 1; j <= __lg(size); ++j) {
             for (int i = 0; i + (1 << j) <= size; ++i) {
