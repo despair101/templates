@@ -56,7 +56,7 @@ long long get_rectangles_union(vector<Rectangle>& v) {
     };
 
     vector<Event> vec(2 * v.size());
-    for (int i = 0; i < sz(v); ++i) {
+    for (int i = 0; i < v.size(); ++i) {
         vec[2 * i] = { v[i].x1, v[i].y1, v[i].y2, 1 };
         vec[2 * i + 1] = { v[i].x2, v[i].y1, v[i].y2, -1 };
     }
