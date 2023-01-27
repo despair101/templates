@@ -64,9 +64,7 @@ public:
     }
 
     explicit SegmentTree() {}
-    explicit SegmentTree(int n) : size(n) {
-        t.resize(4 * size);
-        add.assign(4 * size, 0);
+    explicit SegmentTree(int n) : size(n), t(4 * size), add(4 * size) {
         build(0, 0, size);
     }
 };
