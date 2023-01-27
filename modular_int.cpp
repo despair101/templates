@@ -12,19 +12,19 @@ struct ModularInt {
         return (a.x + b.x >= MOD ? a.x + b.x - MOD : a.x + b.x);
     }
     friend ModularInt operator += (ModularInt& a, ModularInt b) {
-        return a = (a + b);
+        return a = a + b;
     }
     friend ModularInt operator - (ModularInt a, ModularInt b) {
         return (a.x - b.x < 0 ? a.x - b.x + MOD : a.x - b.x);
     }
     friend ModularInt operator -= (ModularInt& a, ModularInt b) {
-        return a = (a - b);
+        return a = a - b;
     }
     friend ModularInt operator * (ModularInt a, ModularInt b) {
         return (long long)(a.x) * b.x % MOD;
     }
     friend ModularInt operator *= (ModularInt& a, ModularInt b) {
-        return a = (a * b);
+        return a = a * b;
     }
 
     ModularInt inv() {
