@@ -1,7 +1,8 @@
 class SegmentTree {
     struct Node {
-        long long sum = 0;
-        long long add = 0;
+        long long sum;
+        long long add;
+        Node() : sum(0), add(0) {}
     };
     
     int size;
@@ -37,7 +38,5 @@ public:
     }
     
     explicit SegmentTree() {}
-    explicit SegmentTree(int n) : size(n) {
-        t.resize(4 * size);
-    }
+    explicit SegmentTree(int n) : size(n), t(4 * size) {}
 };
