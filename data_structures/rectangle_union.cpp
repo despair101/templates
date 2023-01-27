@@ -9,8 +9,12 @@ struct Node {
     Node* l;
     Node* r;
 
-    explicit Node() = default;
+    Node() = default;
     explicit Node(long long lx, long long rx) : min_v(0), add(0), cnt(rx - lx), l(nullptr), r(nullptr) {}
+    ~Node() {
+        if (l) delete l;
+        if (r) delete r;
+    }
 };
 
 void relax(Node* nd) {
@@ -36,28 +40,22 @@ void add(long long l, long long r, int v, Node* nd, long long lx, long long rx) 
     }
 }
 
-void dfs(Node* nd) {
-    if (nd->l) dfs(nd->l);
-    if (nd->r) dfs(nd->r);
-    delete nd;
-}
-
-struct rectangle {
+struct Rectangle {
     long long x1;
     long long y1;
     long long x2;
     long long y2;
 };
 
-long long get_rectangles_union(vector<rectangle>& v) {
-    struct event {
+long long get_rectangles_union(vector<Rectangle>& v) {
+    struct Event {
         long long x;
         long long y1;
         long long y2;
         int type;
     };
 
-    vector<event> vec(2 * v.size());
+    vector<Event> vec(2 * v.size());
     for (int i = 0; i < sz(v); ++i) {
         vec[2 * i] = { v[i].x1, v[i].y1, v[i].y2, 1 };
         vec[2 * i + 1] = { v[i].x2, v[i].y1, v[i].y2, -1 };
@@ -66,9 +64,9 @@ long long get_rectangles_union(vector<rectangle>& v) {
     //v.clear();
     //v.shrink_to_fit();
 
-    sort(vec.begin(), vec.end(), [&](event& a, event& b) {
+    sort(vec.begin(), vec.end(), [&](const Event& a, const Event& b) {
         return a.x < b.x;
-        });
+    });
 
     Node* tree = new Node(LX, RX);
     long long area = 0;
@@ -78,6 +76,7 @@ long long get_rectangles_union(vector<rectangle>& v) {
         area += (vec[i + 1].x - vec[i].x) * (RX - LX - tree->cnt);
     }
 
-    dfs(tree);
+    delete tree;
+    
     return area;
 }
