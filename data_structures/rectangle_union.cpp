@@ -13,7 +13,7 @@ struct Node {
     explicit Node(long long lx, long long rx) : cnt(rx - lx) {}
 };
 
-void compose(Node* nd) {
+void relax(Node* nd) {
     nd->min_v = min(nd->l->min_v, nd->r->min_v);
     nd->cnt = 0;
     if (nd->l->min_v == nd->min_v) nd->cnt += nd->l->cnt;
@@ -32,7 +32,7 @@ void add(long long l, long long r, int v, Node* nd, long long lx, long long rx) 
         if (!nd->r) nd->r = new Node(mx, rx);
         add(l, r, v, nd->l, lx, mx);
         add(l, r, v, nd->r, mx, rx);
-        compose(nd);
+        relax(nd);
     }
 }
 
