@@ -3,14 +3,14 @@
 const long long LX = 0, RX = (1ll << 31);
 
 struct Node {
-    int min_v = 0;
-    int add = 0;
+    int min_v;
+    int add;
     long long cnt;
-    Node* l = nullptr;
-    Node* r = nullptr;
+    Node* l;
+    Node* r;
 
-    explicit Node() {}
-    explicit Node(long long lx, long long rx) : cnt(rx - lx) {}
+    explicit Node() = default;
+    explicit Node(long long lx, long long rx) : min_v(0), add(0), cnt(rx - lx), l(nullptr), r(nullptr) {}
 };
 
 void relax(Node* nd) {
