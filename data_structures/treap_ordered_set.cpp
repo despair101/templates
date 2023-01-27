@@ -1,14 +1,13 @@
-//be careful with data types!
-
 struct Node {
     int x;
     int cnt;
     int dp;
     int y;
-    Node* l = nullptr;
-    Node* r = nullptr;
+    Node* l;
+    Node* r;
 
-    explicit Node(int x_, int cnt_ = 1) : x(x_), cnt(cnt_), dp(cnt_), y(rnd()) {}
+    Node() = default;
+    explicit Node(int x_, int cnt_ = 1) : x(x_), cnt(cnt_), dp(cnt_), y(rnd()), l(nullptr), r(nullptr) {}
     ~Node() {
         if (l) delete l;
         if (r) delete r;
