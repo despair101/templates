@@ -58,8 +58,7 @@ public:
     }
     
     explicit SegmentTree() {}
-    explicit SegmentTree(const vector<A>& a) : size(a.size()) {
-        t.resize(4 * size);
+    explicit SegmentTree(const vector<A>& a) : size(a.size()), t(4 * size) {
         build(0, 0, size, a);
     }
 };
