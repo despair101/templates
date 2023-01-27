@@ -5,23 +5,21 @@ struct CentroidDecomposition {
     vector<vector<pair<int, int>>> g;
     vector<vector<pair<int, ll>>> ca;
 
-    void calcSizes(int u, int p, ll d, int c, int lvl) {
+    void calcSizes(int u, int p, ll d, int c) {
         si[u] = 1;
         for (auto [v, w] : g[u]) {
             if (v == p || used[v]) continue;
-            calcSizes(v, u, d + w, c, lvl);
+            calcSizes(v, u, d + w, c);
             si[u] += si[v];
         }
-        if (lvl != -1) {
-            ca[u].emplace_back(c, d);
-        }
+        ca[u].emplace_back(c, d);
     };
 
-    void findCentroid(int u, int p, int m, int lvl) {
+    void findCentroid(int u, int p, int m) {
         for (auto [v, w] : g[u]) {
             if (v == p || used[v]) continue;
             if (si[v] * 2 > m) {
-                findCentroid(v, u, m, lvl);
+                findCentroid(v, u, m);
                 return;
             }
         }
@@ -29,8 +27,8 @@ struct CentroidDecomposition {
         ca[u].emplace_back(u, 0);
         for (auto [v, w] : g[u]) {
             if (!used[v]) {
-                calcSizes(v, -1, w, u, lvl);
-                findCentroid(v, -1, si[v], lvl + 1);
+                calcSizes(v, -1, w, u);
+                findCentroid(v, -1, si[v]);
             }
         }
     };
@@ -38,7 +36,8 @@ struct CentroidDecomposition {
     CentroidDecomposition() = default;
     explicit CentroidDecomposition(const vector<vector<pair<int, int>>>& g) : 
         size(g.size()), used(size), si(size), g(g), ca(size) {
-        calcSizes(0, -1, 0, 0, -1);
-        findCentroid(0, -1, si[0], 0);
+        calcSizes(0, -1, 0, 0);
+        fill(ca.begin(), ca.end(), vector<pair<int, ll>>());
+        findCentroid(0, -1, si[0]);
     }
 };
