@@ -28,5 +28,5 @@ public:
     }
 
     explicit FenwickTree() {}
-    explicit FenwickTree(int n) : size(n), t(n) {}
+    explicit FenwickTree(int n) : size(n), t(size) {}
 };
