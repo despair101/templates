@@ -1,10 +1,10 @@
 template <int LG> 
 struct BitTrie {
     struct Node {
-        int dp = 0;
+        int dp;
         int nx[2];
 
-        Node() {
+        Node() : dp(0) {
             nx[0] = nx[1] = -1;
         }
     };
