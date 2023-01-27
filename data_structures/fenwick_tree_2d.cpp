@@ -18,7 +18,7 @@ public:
     }
 
     explicit FenwickTree2D() {}
-    explicit FenwickTree2D(const vector<int>& a) : size(a.size()), t(a.size()) {
+    explicit FenwickTree2D(const vector<int>& a) : size(a.size()), t(size) {
         for (int i = 0; i < size; ++i) {
             for (int j = i; j < size; j |= j + 1) {
                 t[j].push_back(a[i]);
