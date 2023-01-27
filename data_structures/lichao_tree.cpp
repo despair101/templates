@@ -12,10 +12,11 @@ const int LX = -1e5, RX = 1e5;
 struct LiChaoTree {
     struct Node {
         Line line;
-        Node* l = nullptr;
-        Node* r = nullptr;
+        Node* l;
+        Node* r;
 
-        Node(Line l) : line(l) {}
+        Node() = default;
+        Node(Line l) : line(l), l(nullptr), r(nullptr) {}
     };
 
     Node* root = nullptr;
