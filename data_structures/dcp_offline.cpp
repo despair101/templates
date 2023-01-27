@@ -72,5 +72,5 @@ struct SegmentTree {
         return c;
     }
 
-    SegmentTree(int n) : size(n), t(4 * n) {}
+    SegmentTree(int n) : size(n), t(4 * size) {}
 };
