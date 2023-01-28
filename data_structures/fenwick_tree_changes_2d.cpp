@@ -27,8 +27,8 @@ public:
         for (int i = ind; i < size; i |= i + 1) t[i] += val;
     }
 
-    explicit FenwickTree() {}
-    explicit FenwickTree(int n) : size(n), t(n) {}
+    FenwickTree() = default;
+    explicit FenwickTree(int n) : size(n), t(size) {}
 };
 
 template<class A>
