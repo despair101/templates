@@ -70,7 +70,7 @@ public:
     return get(l1, r1, l2, r2, 0, 0, size1);
   }
   
-  explicit MainSegmentTree() {}
+  MainSegmentTree() = default;
   explicit MainSegmentTree(const vector<vector<int>>& a) {
     size1 = sz(a), size2 = sz(a[0]);
     t.resize(4 * size1);
