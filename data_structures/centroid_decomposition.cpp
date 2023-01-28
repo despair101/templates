@@ -1,10 +1,10 @@
 template <class A>
 struct CentroidDecomposition {
     int size;
-    vector<bool> used;
-    vector<int> si;
-    vector<vector<pair<int, int>>> g;
-    vector<vector<pair<int, A>>> ca;
+    std::vector<bool> used;
+    std::vector<int> si;
+    std::vector<std::vector<std::pair<int, int>>> g;
+    std::vector<std::vector<std::pair<int, A>>> ca;
 
     void calcSizes(int u, int p, A d, int c) {
         si[u] = 1;
@@ -35,10 +35,10 @@ struct CentroidDecomposition {
     };
 
     CentroidDecomposition() = default;
-    explicit CentroidDecomposition(const vector<vector<pair<int, int>>>& g) : 
+    explicit CentroidDecomposition(const std::vector<std::vector<std::pair<int, int>>>& g) : 
         size(g.size()), used(size), si(size), g(g), ca(size) {
         calcSizes(0, -1, 0, 0);
-        fill(ca.begin(), ca.end(), vector<pair<int, A>>());
+        fill(ca.begin(), ca.end(), std::vector<std::pair<int, A>>());
         findCentroid(0, -1, si[0]);
     }
 };
