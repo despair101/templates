@@ -1,7 +1,7 @@
 class DSU {
     int cnt;
-    vector<int> p;
-    vector<int> r;
+    std::vector<int> p;
+    std::vector<int> r;
 
 public:
     int get(int u) {
@@ -14,7 +14,7 @@ public:
     bool unite(int u, int v) {
         u = get(u), v = get(v);
         if (u == v) return false;
-        if (r[u] < r[v]) swap(u, v);
+        if (r[u] < r[v]) std::swap(u, v);
         r[u] += r[v];
         p[v] = u;
         --cnt;
