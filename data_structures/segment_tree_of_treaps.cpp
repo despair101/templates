@@ -1,4 +1,5 @@
 //treap: https://github.com/despair101/templates/blob/main/data_structures/treap_ordered_set.cpp
+
 class SegmentTreeOfTreaps {
   int size;
   vector<Node*> t;
