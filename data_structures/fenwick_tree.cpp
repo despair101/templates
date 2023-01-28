@@ -1,7 +1,7 @@
 template<class A>
 class FenwickTree {
     int size;
-    vector<A> t;
+    std::vector<A> t;
 
 public:
     A get(int l, int r) {
