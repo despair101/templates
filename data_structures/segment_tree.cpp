@@ -9,14 +9,14 @@ public:
     
 private:
     int size;
-    vector<Node> t;
+    std::vector<Node> t;
 
     inline Node compose(Node l, Node r) {
         Node res; //TODO
         return res;
     }
 
-    void build(int x, int lx, int rx, const vector<A>& a) {
+    void build(int x, int lx, int rx, const std::vector<A>& a) {
         if (rx - lx == 1) {
             //TODO
         } else {
@@ -58,7 +58,7 @@ public:
     }
     
     SegmentTree() = default;
-    explicit SegmentTree(const vector<A>& a) : size(a.size()), t(4 * size) {
+    explicit SegmentTree(const std::vector<A>& a) : size(a.size()), t(4 * size) {
         build(0, 0, size, a);
     }
 };
