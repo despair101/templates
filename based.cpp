@@ -3,7 +3,6 @@
 #endif
 
 #include "bits/stdc++.h"
-using namespace std;
 
 #ifdef DESPAIR_101
 #include "debug_output.h"
@@ -20,9 +19,9 @@ typedef unsigned int uint;
 typedef unsigned long long ull;
 typedef long double ld;
 
-template <class A>
+template<class A>
 inline bool umax(A& x, A y) { if (y > x) { x = y; return true; } return false; }
-template <class A>
+template<class A>
 inline bool umin(A& x, A y) { if (y < x) { x = y; return true; } return false; }
 
 std::mt19937 rnd(101);
@@ -31,6 +30,7 @@ std::mt19937 rnd(101);
 #define sz(x) int(x.size())
 
 void solve() {
+    using namespace std;
 }
 
 signed main() {
@@ -39,7 +39,7 @@ signed main() {
     std::cout << std::fixed << std::setprecision(20);
 
     int testsCnt = 1;
-    // std::cin >> testsCnt;
+    std::cin >> testsCnt;
     for (int curTest = 1; curTest <= testsCnt; ++curTest) {
         showTest(curTest);
         solve();
