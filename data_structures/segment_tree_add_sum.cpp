@@ -2,6 +2,7 @@ class SegmentTree {
     struct Node {
         long long sum;
         long long add;
+        
         Node() : sum(0), add(0) {}
     };
     
