@@ -1,16 +1,12 @@
 //Mint: https://github.com/despair101/templates/blob/main/mint.cpp
 
-const int MOD = 1'000'000'007;
-
-typedef ModularInt<MOD> Mint;
-
 template <int MOD, int P>
 struct Hasher {
     int size;
-    vector<Mint> h, p;
+    vector<ModularInt<MOD>> h, p;
 
-    Mint getHash(int l, int r) {
-        return h[r] - h[l] * p[r - l];
+    inr getHash(int l, int r) {
+        return (h[r] - h[l] * p[r - l]).x;
     }
     
     Hasher() = default;
