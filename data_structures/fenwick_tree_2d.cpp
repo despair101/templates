@@ -17,7 +17,7 @@ public:
         return get(r, mi, ma) - get(l - 1, mi, ma);
     }
 
-    explicit FenwickTree2D() {}
+    FenwickTree2D() = default;
     explicit FenwickTree2D(const vector<int>& a) : size(a.size()), t(size) {
         for (int i = 0; i < size; ++i) {
             for (int j = i; j < size; j |= j + 1) {
