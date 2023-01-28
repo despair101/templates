@@ -18,7 +18,7 @@ struct Node {
 };
 
 void relax(Node* nd) {
-    nd->min_v = min(nd->l->min_v, nd->r->min_v);
+    nd->min_v = std::min(nd->l->min_v, nd->r->min_v);
     nd->cnt = 0;
     if (nd->l->min_v == nd->min_v) nd->cnt += nd->l->cnt;
     if (nd->r->min_v == nd->min_v) nd->cnt += nd->r->cnt;
@@ -47,7 +47,7 @@ struct Rectangle {
     long long y2;
 };
 
-long long get_rectangles_union(vector<Rectangle>& v) {
+long long get_rectangles_union(std::vector<Rectangle>& v) {
     struct Event {
         long long x;
         long long y1;
@@ -55,7 +55,7 @@ long long get_rectangles_union(vector<Rectangle>& v) {
         int type;
     };
 
-    vector<Event> vec(2 * v.size());
+    std::vector<Event> vec(2 * v.size());
     for (int i = 0; i < v.size(); ++i) {
         vec[2 * i] = { v[i].x1, v[i].y1, v[i].y2, 1 };
         vec[2 * i + 1] = { v[i].x2, v[i].y1, v[i].y2, -1 };
