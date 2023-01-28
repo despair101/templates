@@ -7,7 +7,7 @@ class SegmentTree {
     };
     
     int size;
-    vector<Node> t;
+    std::vector<Node> t;
  
     void modify(int l, int r, int v, int x, int lx, int rx) {
         if (lx >= r || rx <= l) return;
