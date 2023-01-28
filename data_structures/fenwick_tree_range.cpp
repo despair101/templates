@@ -19,6 +19,7 @@ public:
     }
 
     long long get(int l, int r) {
+        if (l > r) return 0;
         return get(r) - get(l - 1);
     }
 
