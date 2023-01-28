@@ -8,7 +8,7 @@ struct Hasher {
         return (h[r] - h[l] * p[r - l]).x;
     }
     
-    explicit Hasher() {}
+    Hasher() = default;
     explicit Hasher(const string& s) : size(s.size() + 1), h(size), p(size, 1) {
         for (int i = 0; i < size - 1; ++i) {
             h[i + 1] = h[i] * P + s[i];
