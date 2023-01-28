@@ -37,7 +37,7 @@ Node* merge(Node* a, Node* b) {
 }
 
 // split to (<v) and (>=v)
-pair<Node*, Node*> split(Node* a, int v) { 
+std::pair<Node*, Node*> split(Node* a, int v) { 
     if (!a) return { nullptr, nullptr };
     if (a->x < v) {
         auto [t1, t2] = split(a->r, v);
