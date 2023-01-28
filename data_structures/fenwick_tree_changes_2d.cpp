@@ -12,7 +12,7 @@ struct Query {
 template<class A> 
 class FenwickTree {
     int size;
-    vector<A> t;
+    std::vector<A> t;
 
 public:
     A get(int l, int r) {
@@ -34,9 +34,9 @@ public:
 template<class A>
 class FenwickTreeChanges2D {
     int size;
-    vector<A> x;
-    vector<vector<A>> crd;
-    vector<FenwickTree<int>> t;
+    std::vector<A> x;
+    std::vector<std::vector<A>> crd;
+    std::vector<FenwickTree<int>> t;
 
 public:
     int get(int l, int r, A mi, A ma) {
@@ -68,10 +68,10 @@ public:
     }
 
     FenwickTreeChanges2D() = default;
-    explicit FenwickTreeChanges2D(const vector<A>& a,
-        const vector<Query<A>>& q) : size(a.size()), x(a), crd(size), t(size) {
-        vector<pair<int, int>> changes;
-        vector<tuple<int, int, A, A>> queries;
+    explicit FenwickTreeChanges2D(const std::vector<A>& a,
+        const std::vector<Query<A>>& q) : size(a.size()), x(a), crd(size), t(size) {
+        std::vector<std::pair<int, int>> changes;
+        std::vector<std::tuple<int, int, A, A>> queries;
 
         for (auto [type, i, v, l, r, mi, ma] : q) {
             if (type) {
