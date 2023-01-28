@@ -1,6 +1,6 @@
 class SegmentTree {
     int size;
-    vector<ll> t;
+    std::vector<ll> t;
 
     ll compose(ll x, ll y) {
         return x + y;
@@ -42,12 +42,12 @@ public:
 
 struct HLD {
     int t;
-    vector<int> de;
-    vector<int> up;
-    vector<int> ti;
-    vector<int> si;
-    vector<int> pa;
-    vector<vector<int>> g;
+    std::vector<int> de;
+    std::vector<int> up;
+    std::vector<int> ti;
+    std::vector<int> si;
+    std::vector<int> pa;
+    std::vector<std::vector<int>> g;
     SegmentTree st;
 
     void calc(int u) {
@@ -58,7 +58,7 @@ struct HLD {
             g[v].erase(find(g[v].begin(), g[v].end(), u));
             calc(v);
             si[u] += si[v];
-            if (si[v] > si[g[u].front()]) swap(v, g[u].front());
+            if (si[v] > si[g[u].front()]) std::swap(v, g[u].front());
         }
     }
 
@@ -76,10 +76,10 @@ struct HLD {
 
     int lca(int u, int v) {
         while (up[u] != up[v]) {
-            if (de[up[u]] < de[up[v]]) swap(u, v);
+            if (de[up[u]] < de[up[v]]) std::swap(u, v);
             u = pa[up[u]];
         }
-        if (de[u] < de[v]) swap(u, v);
+        if (de[u] < de[v]) std::swap(u, v);
         return v;
     }
 
@@ -90,17 +90,17 @@ struct HLD {
     ll get(int u, int v) {
         ll ans = 0;
         while (up[u] != up[v]) {
-            if (de[up[u]] < de[up[v]]) swap(u, v);
+            if (de[up[u]] < de[up[v]]) std::swap(u, v);
             ans = compose(ans, st.get(ti[up[u]], ti[u] + 1));
             u = pa[up[u]];
         }
-        if (de[u] < de[v]) swap(u, v);
+        if (de[u] < de[v]) std::swap(u, v);
         ans = compose(ans, st.get(ti[v], ti[u] + 1));
         return ans;
     }
 
     HLD() = default;
-    explicit HLD(int n, const vector<vector<int>>& gr) :
+    explicit HLD(int n, const std::vector<std::vector<int>>& gr) :
         t(0), de(n), up(n), ti(n), si(n), pa(n), g(gr), st(n) {
         calc(0);
         dfs(0);
