@@ -8,14 +8,14 @@ struct Node {
 struct PersistentSegmentTree {
     int size;
  
-    vector<Node> t;
-    vector<int> roots;
+    std::vector<Node> t;
+    std::vector<int> roots;
  
     Node newNode(int x) {
         return t[x];
     }
  
-    pair<int, int> compose(pair<int, int> fi, pair<int, int> se) {
+    std::pair<int, int> compose(std::pair<int, int> fi, std::pair<int, int> se) {
         return { std::min(fi.first, se.first), std::max(fi.second, se.second) };
     }
  
@@ -33,12 +33,12 @@ struct PersistentSegmentTree {
         } else {
             t[res].r = change(i, v, t[x].r, mx, rx);
         }
-        t[res].min = min(t[t[res].l].min, t[t[res].r].min);
-        t[res].max = max(t[t[res].l].max, t[t[res].r].max);
+        t[res].min = std::min(t[t[res].l].min, t[t[res].r].min);
+        t[res].max = std::max(t[t[res].l].max, t[t[res].r].max);
         return res;
     }
  
-    pair<int, int> get(int l, int r, int x, int lx, int rx) {
+    std::pair<int, int> get(int l, int r, int x, int lx, int rx) {
         if (lx >= l && rx <= r) return { t[x].min, t[x].max };
         if (lx >= r || rx <= l) return { INT_MAX, INT_MIN };
         int mx = (lx + rx) / 2;
@@ -51,12 +51,12 @@ public:
         roots.push_back(ind);
     }
  
-    pair<int, int> get(int l, int r, int op) {
+    std::pair<int, int> get(int l, int r, int op) {
         return get(l, r, roots[op], 0, size);
     }
     
     PersistentSegmentTree() = default;
-    explicit PersistentSegmentTree(int n_) : size(n) {
+    explicit PersistentSegmentTree(int n) : size(n) {
         t.push_back(Node{ INT_MAX, INT_MIN, 0, 0 });
         roots.push_back(0);
     }
