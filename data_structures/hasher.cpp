@@ -1,4 +1,4 @@
-//Mint: https://github.com/despair101/templates/blob/main/mint.cpp
+//Mint: https://github.com/despair101/templates/blob/main/modular_int.cpp
 
 template <int MOD, int P>
 struct Hasher {
