@@ -9,14 +9,14 @@ public:
 
 private:
     int size;
-    vector<Node> t;
-    vector<ll> add;
+    std::vector<Node> t;
+    std::vector<ll> add;
 
     Node compose(Node fi, Node se, int pl) {
         Node res = {
-            max(fi.mx, se.mx) + pl,
+            std::max(fi.mx, se.mx) + pl,
             (fi.mx >= se.mx ? fi.mxp : se.mxp),
-            min(fi.mn, se.mn) + pl,
+            std::min(fi.mn, se.mn) + pl,
             (fi.mn <= se.mn ? fi.mnp : se.mnp),
         };
         return res;
