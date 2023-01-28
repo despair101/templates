@@ -27,6 +27,6 @@ public:
         return i + 1;
     }
 
-    explicit FenwickTree() {}
+    FenwickTree() = default;
     explicit FenwickTree(int n) : size(n), t(size) {}
 };
