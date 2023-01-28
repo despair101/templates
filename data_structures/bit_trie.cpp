@@ -4,9 +4,7 @@ struct BitTrie {
         int dp;
         int nx[2];
 
-        Node() : dp(0) {
-            nx[0] = nx[1] = -1;
-        }
+        Node() : dp(0), nx{ -1, -1 } {}
     };
 
     vector<Node> t{ Node() };
