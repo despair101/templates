@@ -1,7 +1,7 @@
 template <class A>
 class FenwickTree2D {
     int size;
-    vector<vector<int>> t;
+    std::vector<std::vector<int>> t;
 
     int get(int ind, int mi, int ma) {
         int res = 0;
@@ -19,7 +19,7 @@ public:
     }
 
     FenwickTree2D() = default;
-    explicit FenwickTree2D(const vector<int>& a) : size(a.size()), t(size) {
+    explicit FenwickTree2D(const std::vector<int>& a) : size(a.size()), t(size) {
         for (int i = 0; i < size; ++i) {
             for (int j = i; j < size; j |= j + 1) {
                 t[j].push_back(a[i]);
