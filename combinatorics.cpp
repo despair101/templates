@@ -1,10 +1,11 @@
-//https://github.com/despair101/templates/blob/main/mint.cpp
+//https://github.com/despair101/templates/blob/main/modular_int.cpp
+
 const int MOD = 1'000'000'007;
 
 typedef ModularInt<MOD> Mint;
 
 vector<Mint> F, IF;
-void precalcCombinatorics(int N, int MOD) {
+void precalcCombinatorics(int N) {
     F.resize(N + 1);
     F[0] = 1;
     for (int i = 1; i <= N; ++i) {
