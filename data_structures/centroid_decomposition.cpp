@@ -1,11 +1,12 @@
+template <class A>
 struct CentroidDecomposition {
     int size;
     vector<bool> used;
     vector<int> si;
     vector<vector<pair<int, int>>> g;
-    vector<vector<pair<int, ll>>> ca;
+    vector<vector<pair<int, A>>> ca;
 
-    void calcSizes(int u, int p, ll d, int c) {
+    void calcSizes(int u, int p, A d, int c) {
         si[u] = 1;
         for (auto [v, w] : g[u]) {
             if (v == p || used[v]) continue;
@@ -37,7 +38,7 @@ struct CentroidDecomposition {
     explicit CentroidDecomposition(const vector<vector<pair<int, int>>>& g) : 
         size(g.size()), used(size), si(size), g(g), ca(size) {
         calcSizes(0, -1, 0, 0);
-        fill(ca.begin(), ca.end(), vector<pair<int, ll>>());
+        fill(ca.begin(), ca.end(), vector<pair<int, A>>());
         findCentroid(0, -1, si[0]);
     }
 };
