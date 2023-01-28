@@ -1,7 +1,9 @@
 //https://github.com/despair101/templates/blob/main/mint.cpp
 const int MOD = 1'000'000'007;
 
-vector<Mint<MOD>> F, IF;
+typedef ModularInt<MOD> Mint;
+
+vector<Mint> F, IF;
 void precalcCombinatorics(int N, int MOD) {
     F.resize(N + 1);
     F[0] = 1;
@@ -15,5 +17,5 @@ void precalcCombinatorics(int N, int MOD) {
     }
 }
 
-Mint<MOD> A(int n, int k) { return F[n] * IF[n - k]; }
-Mint<MOD> C(int n, int k) { return F[n] * IF[n - k] * IF[k]; }
+Mint A(int n, int k) { return F[n] * IF[n - k]; }
+Mint C(int n, int k) { return F[n] * IF[n - k] * IF[k]; }
