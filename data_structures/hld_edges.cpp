@@ -36,10 +36,8 @@ public:
         return get(l, r, 0, 0, size);
     }
 
-    explicit SegmentTree() {}
-    explicit SegmentTree(int n) : size(n) {
-        t.assign(4 * size, 0);
-    }
+    SegmentTree() = default;
+    explicit SegmentTree(int n) : size(n), t(4 * size) {}
 };
 
 struct HLD {
@@ -103,7 +101,7 @@ struct HLD {
         return ans;
     }
 
-    explicit HLD() {}
+    HLD() = default;
     explicit HLD(int n, const vector<vector<int>>& gr) : de(n), up(n), ti(n), si(n), pa(n), g(gr), st(n) {
         calc(0);
         dfs(0);
