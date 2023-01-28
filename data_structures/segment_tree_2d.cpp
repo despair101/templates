@@ -25,7 +25,7 @@ struct ST {
     return get(l, r, 0, 0, size);
   }
   
-  explicit ST() {}
+  ST() = default;
   explicit ST(const vector<int>& a) : size(a.size()), t(4 * size) {
     build(0, 0, size, a);
   }
