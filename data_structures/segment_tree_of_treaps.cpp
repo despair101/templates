@@ -55,6 +55,6 @@ public:
     return get(l, r, v, 0, 0, size);
   }
   
-  explicit SegmentTreeOfTreaps() {}
-  explicit SegmentTreeOfTreaps(int n) : size(n), t(4 * n, nullptr) {}
+  SegmentTreeOfTreaps() = default;
+  explicit SegmentTreeOfTreaps(int n) : size(n), t(4 * size, nullptr) {}
 };
