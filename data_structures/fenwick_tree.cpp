@@ -16,7 +16,7 @@ public:
         for (; i < size; i |= i + 1) t[i] += v;
     }
 
-    int lb(int sum) {
+    int lb(A sum) {
         if (get(0, size - 1) < sum) return -1;
         int i = -1;
         for (int l = __lg(size); l >= 0; --l) {
