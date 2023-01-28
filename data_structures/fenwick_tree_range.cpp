@@ -1,15 +1,15 @@
 class FenwickTreeRange {
     int size;
-    vector<long long> t1;
-    vector<long long> t2;
+    std::vector<long long> t1;
+    std::vector<long long> t2;
 
-    long long get(int i, vector<long long>& t) {
+    long long get(int i, std::vector<long long>& t) {
         long long res = 0;
         for (; i >= 0; i &= i + 1, --i) res += t[i];
         return res;
     }
 
-    void add(int i, long long val, vector<long long>& t) {
+    void add(int i, long long val, std::vector<long long>& t) {
         for (; i < size; i |= i + 1) t[i] += val;
     }
 
