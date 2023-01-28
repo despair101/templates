@@ -22,12 +22,12 @@ struct LiChaoTree {
     Node* root = nullptr;
 
     int getMin(Node* t, int i, int lx, int rx) {
-        if (!t) return LLONG_MAX;
+        if (!t) return INT_MAX;
         int mx = (lx + rx) / 2;
         if (i < mx) {
-            return min(t->line(i), getMin(t->l, i, lx, mx - 1));
+            return std::min(t->line(i), getMin(t->l, i, lx, mx - 1));
         } else {
-            return min(t->line(i), getMin(t->r, i, mx, rx));
+            return std::min(t->line(i), getMin(t->r, i, mx, rx));
         }
     }
     int getMin(int i) {
@@ -40,7 +40,7 @@ struct LiChaoTree {
         } else {
             int mx = (lx + rx) / 2;
             if (t->line(mx) > a(mx)) {
-                swap(t->line, a);
+                std::swap(t->line, a);
             }
             if (lx < rx) {
                 if (a.k > t->line.k) {
