@@ -55,7 +55,7 @@ public:
         return get(l, r, roots[op], 0, size);
     }
     
-    explicit PersistentSegmentTree() {}
+    PersistentSegmentTree() = default;
     explicit PersistentSegmentTree(int n_) : size(n) {
         t.push_back(Node{ INT_MAX, INT_MIN, 0, 0 });
         roots.push_back(0);
