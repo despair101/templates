@@ -37,6 +37,6 @@ public:
         return get(l, r, 0, 0, size, 0);
     }
     
-    explicit SegmentTree() {}
+    SegmentTree() = default;
     explicit SegmentTree(int n) : size(n), t(4 * size) {}
 };
