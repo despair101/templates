@@ -40,6 +40,7 @@ class FenwickTreeChanges2D {
 
 public:
     int get(int l, int r, A mi, A ma) {
+        if (l > r) return 0;
         int res = 0;
         for (int i = r; i >= 0; i &= i + 1, --i) {
             int lo = lower_bound(crd[i].begin(), crd[i].end(), mi) - crd[i].begin();
