@@ -29,7 +29,7 @@ struct DSU {
     }
 };
 
-struct SegmentTree {
+struct DcpOffline {
     int size;
     vector<vector<pair<int, int>>> t;
 
@@ -72,5 +72,6 @@ struct SegmentTree {
         return c;
     }
 
-    SegmentTree(int n) : size(n), t(4 * size) {}
+    DcpOffline() = default;
+    explicit DcpOffline(int n) : size(n), t(4 * size) {}
 };
