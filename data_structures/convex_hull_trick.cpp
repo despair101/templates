@@ -17,7 +17,7 @@ struct Line {
 
     ll intersect(Line y) {
         assert(k != y.k && "EQUAL LINE COEFFS");
-        return div_ceil(y.b - b, k - y.k);
+        return divCeil(y.b - b, k - y.k);
     }
 
     ll operator()(int x) {
@@ -26,8 +26,8 @@ struct Line {
 };
 
 struct ConvexHull {
-    vector<Line> v;
-    vector<ll> p;
+    std::vector<Line> v;
+    std::vector<ll> p;
 
     void insert(Line li) {
         while (!v.empty() && v.back().intersect(li) <= p.back()) {
