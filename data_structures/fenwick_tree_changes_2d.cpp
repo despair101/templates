@@ -66,7 +66,7 @@ public:
         } 
     }
 
-    explicit FenwickTreeChanges2D() {}
+    FenwickTreeChanges2D() = default;
     explicit FenwickTreeChanges2D(const vector<A>& a,
         const vector<Query<A>>& q) : size(a.size()), x(a), crd(size), t(size) {
         vector<pair<int, int>> changes;
