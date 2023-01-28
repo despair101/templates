@@ -24,6 +24,7 @@ public:
     }
 
     void add(int l, int r, long long val) {
+        if (l > r) return;
         add(l, val, t1);
         add(r + 1, -val, t1);
         add(l, val * l, t2);
