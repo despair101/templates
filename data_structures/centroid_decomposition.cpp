@@ -16,11 +16,11 @@ struct CentroidDecomposition {
         ca[u].emplace_back(c, d);
     };
 
-    void findCentroid(int u, int p, int m) {
+    void findCentroid(int u, int p, int n) {
         for (auto [v, w] : g[u]) {
             if (v == p || used[v]) continue;
-            if (si[v] * 2 > m) {
-                findCentroid(v, u, m);
+            if (si[v] * 2 > n) {
+                findCentroid(v, u, n);
                 return;
             }
         }
