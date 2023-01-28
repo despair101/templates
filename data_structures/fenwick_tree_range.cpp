@@ -1,6 +1,7 @@
 class FenwickTreeRange {
     int size;
-    vector<long long> t1, t2;
+    vector<long long> t1;
+    vector<long long> t2;
 
     long long get(int i, vector<long long>& t) {
         long long res = 0;
@@ -33,6 +34,6 @@ public:
         t2.assign(size, 0);
     }
 
-    explicit FenwickTreeRange() {}
+    FenwickTreeRange() = default;
     explicit FenwickTreeRange(int n) : size(n), t1(size), t2(size) {}
 }; 
