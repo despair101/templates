@@ -5,6 +5,7 @@ class FenwickTree {
 
 public:
     A get(int l, int r) {
+        if (l > r) return 0;
         A res = 0;
         for (int i = r; i >= 0; i &= i + 1, --i) res += t[i];
         for (int i = l - 1; i >= 0; i &= i + 1, --i) res -= t[i];
