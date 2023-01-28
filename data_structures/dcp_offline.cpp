@@ -1,13 +1,13 @@
 struct DSU {
     int cnt;
-    vector<int> p;
-    vector<int> r;
+    std::vector<int> p;
+    std::vector<int> r;
 
-    pair<int, int> merge(int u, int v) {
+    std::pair<int, int> merge(int u, int v) {
         u = get(u), v = get(v);
         if (u == v) return { u, v };
         --cnt;
-        if (r[u] < r[v]) swap(u, v);
+        if (r[u] < r[v]) std::swap(u, v);
         r[u] += r[v];
         p[v] = u;
         return { u, v };
@@ -31,9 +31,9 @@ struct DSU {
 
 struct DcpOffline {
     int size;
-    vector<vector<pair<int, int>>> t;
+    std::vector<std::vector<std::pair<int, int>>> t;
 
-    void insert(int l, int r, pair<int, int> e, int x, int lx, int rx) {
+    void insert(int l, int r, std::pair<int, int> e, int x, int lx, int rx) {
         if (lx >= r || rx <= l) return;
         if (lx >= l && rx <= r) {
             t[x].push_back(e);
@@ -43,13 +43,13 @@ struct DcpOffline {
         insert(l, r, e, 2 * x + 1, lx, mx);
         insert(l, r, e, 2 * x + 2, mx, rx);
     }
-    void insert(int l, int r, pair<int, int> e) {
-        if (e.first > e.second) swap(e.first, e.second);
+    void insert(int l, int r, std::pair<int, int> e) {
+        if (e.first > e.second) std::swap(e.first, e.second);
         insert(l, r, e, 0, 0, size);
     }
 
-    void dfs(int x, int lx, int rx, vector<int>& c, DSU& d) {
-        vector<pair<int, int>> kok;
+    void dfs(int x, int lx, int rx, std::vector<int>& c, DSU& d) {
+        std::vector<std::pair<int, int>> kok;
         for (auto [u, v] : t[x]) {
             kok.push_back(d.merge(u, v));
         }
@@ -65,8 +65,8 @@ struct DcpOffline {
             d.split(u, v);
         }
     }
-    vector<int> dfs(int n) {
-        vector<int> c(size);
+    std::vector<int> dfs(int n) {
+        std::vector<int> c(size);
         DSU d(n);
         dfs(0, 0, size, c, d);
         return c;
