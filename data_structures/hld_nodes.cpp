@@ -41,7 +41,7 @@ public:
 };
 
 struct HLD {
-    int t = 0;
+    int t;
     vector<int> de;
     vector<int> up;
     vector<int> ti;
@@ -100,7 +100,8 @@ struct HLD {
     }
 
     HLD() = default;
-    explicit HLD(int n, const vector<vector<int>>& gr) : de(n), up(n), ti(n), si(n), pa(n), g(gr), st(n) {
+    explicit HLD(int n, const vector<vector<int>>& gr) :
+        t(0), de(n), up(n), ti(n), si(n), pa(n), g(gr), st(n) {
         calc(0);
         dfs(0);
     }
