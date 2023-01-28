@@ -7,7 +7,7 @@ struct BitTrie {
         Node() : dp(0), nx{ -1, -1 } {}
     };
 
-    vector<Node> t{ Node() };
+    std::vector<Node> t{ Node() };
 
     void insert(int x) {
         int u = 0;
