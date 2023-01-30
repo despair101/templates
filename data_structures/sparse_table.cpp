@@ -15,7 +15,7 @@ public:
 
     SparseTable() = default;
     explicit SparseTable(const std::vector<A>& a) :
-        size(a.size()), t(__lg(size) + 1), std::vector<std::pair<A, int>>(size) {
+        size(a.size()), t(__lg(size) + 1, std::vector<std::pair<A, int>>(size)) {
         for (int i = 0; i < size; ++i) {
             t[0][i] = pair(a[i], i);
         }
