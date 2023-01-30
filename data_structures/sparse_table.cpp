@@ -7,7 +7,7 @@ class SparseTable {
         return min(f, s);
     }
 
-public:
+ public:
     std::pair<A, int> get(int l, int r) {
         int pw = __lg(r - l);
         return compose(t[pw][l], t[pw][r - (1 << pw)]);
