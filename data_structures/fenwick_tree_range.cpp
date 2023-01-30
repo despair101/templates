@@ -13,7 +13,7 @@ class FenwickTreeRange {
         for (; i < size; i |= i + 1) t[i] += val;
     }
 
-public:
+ public:
     long long get(int i) {
         return get(i, t1) * (i + 1) - get(i, t2);
     }
