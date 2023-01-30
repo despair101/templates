@@ -14,7 +14,7 @@ class FenwickTree {
     int size;
     std::vector<A> t;
 
-public:
+ public:
     A get(int l, int r) {
         if (l > r) return 0;
         A res = 0;
