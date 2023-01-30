@@ -23,7 +23,7 @@ class MergeSortTree {
         return get(lt(x), lx, md(lx, rx), l, r, mi, ma) + get(rt(x), md(lx, rx), rx, l, r, mi, ma);
     }
 
-public:
+ public:
     int get(int l, int r, int mi, int ma) {
         return get(0, 0, size, l, r, mi, ma);
     }
