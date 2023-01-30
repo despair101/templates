@@ -29,7 +29,7 @@ class SegmentTree {
         return get(l, r, 2 * x + 1, lx, mx, dop + t[x].add) + get(l, r, 2 * x + 2, mx, rx, dop + t[x].add);
     }
  
-public:
+ public:
     void modify(int l, int r, int v) {
         modify(l, r, v, 0, 0, size);
     }
