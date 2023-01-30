@@ -12,7 +12,7 @@ class FenwickTree2D {
         return res;
     }
 
-public:
+ public:
     int get(int l, int r, int mi, int ma) {
         if (l > r) return 0;
         return get(r, mi, ma) - get(l - 1, mi, ma);
