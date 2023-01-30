@@ -54,7 +54,7 @@ private:
         return compose(get(l, r, 2 * x + 1, lx, mx), get(l, r, 2 * x + 2, mx, rx), add[x]);
     }
 
-public:
+ public:
     void modify(int l, int r, int v) {
         modify(l, r, v, 0, 0, size);
     }
