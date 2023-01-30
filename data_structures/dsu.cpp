@@ -3,7 +3,7 @@ class DSU {
     std::vector<int> p;
     std::vector<int> r;
 
-public:
+ public:
     int get(int u) {
         return (p[u] == u ? u : p[u] = get(p[u]));
     }
