@@ -5,7 +5,7 @@ struct Node {
     int r;
 };
  
-struct PersistentSegmentTree {
+class PersistentSegmentTree {
     int size;
  
     std::vector<Node> t;
