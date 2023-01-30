@@ -7,7 +7,7 @@ public:
     const Node NEUTRAL {
     }; //TODO
     
-private:
+ private:
     int size;
     std::vector<Node> t;
 
@@ -48,7 +48,7 @@ private:
         return compose(get(l, r, 2 * x + 1, lx, mx), get(l, r, 2 * x + 2, mx, rx));
     }
 
-public:
+ public:
     void change(int i, Node v) {
         change(i, v, 0, 0, size);
     }
