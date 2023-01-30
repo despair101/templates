@@ -57,7 +57,7 @@ class MainSegmentTree {
     }
   }
  
-public:
+ public:
   int get(int l1, int r1, int l2, int r2, int x, int lx, int rx) {
     if (lx >= r1 || rx <= l1) return INT_MAX;
     if (lx >= l1 && rx <= r1) return t[x].st.get(l2, r2);
