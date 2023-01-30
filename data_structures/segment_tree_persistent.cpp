@@ -45,7 +45,7 @@ struct PersistentSegmentTree {
         return compose(get(l, r, t[x].l, lx, mx), get(l, r, t[x].r, mx, rx));
     }
  
-public:
+ public:
     void change(int i, int v) {
         int ind = change(i, v, roots.back(), 0, size);
         roots.push_back(ind);
