@@ -120,7 +120,7 @@ class SegmentTreeOfTreaps {
     return ans;
   }
   
-public:
+ public:
   void add(int i, int v) {
     add(i, v, 0, 0, size);
   }
