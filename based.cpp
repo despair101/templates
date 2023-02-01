@@ -15,11 +15,6 @@ using namespace std;
 #define showTest(x)
 #endif
 
-typedef long long ll;
-typedef unsigned int uint;
-typedef unsigned long long ull;
-typedef long double ld;
-
 template<class A>
 bool umax(A& x, A y) { if (y > x) { x = y; return true; } return false; }
 template<class A>
@@ -27,7 +22,10 @@ bool umin(A& x, A y) { if (y < x) { x = y; return true; } return false; }
 
 std::mt19937 rnd(101);
 
-// #define int ll
+typedef long long ll;
+typedef long double ld;
+
+// #define int int64_t
 #define sz(x) int(x.size())
 
 void solve() {
