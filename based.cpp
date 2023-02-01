@@ -3,7 +3,6 @@
 #endif
 
 #include "bits/stdc++.h"
-using namespace std;
 
 #ifdef DESPAIR_101
 #include "debug_output.h"
@@ -14,6 +13,8 @@ using namespace std;
 #define dbg(x)
 #define showTest(x)
 #endif
+
+using namespace std;
 
 template<class A>
 bool umax(A& x, A y) { if (y > x) { x = y; return true; } return false; }
@@ -29,6 +30,8 @@ typedef long double ld;
 #define sz(x) int(x.size())
 
 void solve() {
+    int a = 1;
+    dbg(a);
 }
 
 signed main() {
