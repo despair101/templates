@@ -30,8 +30,6 @@ typedef long double ld;
 #define sz(x) int(x.size())
 
 void solve() {
-    int a = 1;
-    dbg(a);
 }
 
 signed main() {
