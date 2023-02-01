@@ -1,4 +1,4 @@
-template <class A>
+template <class A, A NEUTRAL>
 class SparseTable {
     int size;
     std::vector<std::vector<std::pair<A, int>>> t;
@@ -9,6 +9,7 @@ class SparseTable {
 
  public:
     std::pair<A, int> get(int l, int r) {
+        if (l >= r) return NEUTRAL;
         int pw = __lg(r - l);
         return compose(t[pw][l], t[pw][r - (1 << pw)]);
     }
