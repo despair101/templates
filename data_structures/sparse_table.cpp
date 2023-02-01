@@ -1,15 +1,15 @@
-template <class A, A NEUTRAL>
+template <class A>
 class SparseTable {
     int size;
     std::vector<std::vector<std::pair<A, int>>> t;
     
     std::pair<A, int> compose(const std::pair<A, int>& f, const std::pair<A, int>& s) {
-        return min(f, s);
+        return min(f, s); // TODO CHANGE FUNCTION
     }
 
  public:
     std::pair<A, int> get(int l, int r) {
-        if (l >= r) return NEUTRAL;
+        assert(l < r);
         int pw = __lg(r - l);
         return compose(t[pw][l], t[pw][r - (1 << pw)]);
     }
