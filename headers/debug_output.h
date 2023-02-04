@@ -15,8 +15,10 @@ namespace debug {
     template<class A, size_t B> void print(std::array<A, B> a);
     template<class A> void print(std::vector<A> a);
     template<class A> void print(std::deque<A> a);
-    template<class A> void print(A a) { std::cerr << a; }
 
+    template<class A> void print(A a) {
+        std::cerr << a;
+    }
     template<class A, class B> void print(std::pair<A, B> a) {
         std::cerr << "("; print(a.first); std::cerr << " "; print(a.second); std::cerr << ")";
     }
@@ -51,3 +53,4 @@ namespace debug {
         for (std::pair<A, B> b : a) { print(b); std::cerr << " "; }; std::cerr << "\n";
     }
 }
+
