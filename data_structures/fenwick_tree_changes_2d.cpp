@@ -38,7 +38,7 @@ class FenwickTreeChanges2D {
     std::vector<std::vector<A>> crd;
     std::vector<FenwickTree<int>> t;
 
-public:
+ public:
     int get(int l, int r, A mi, A ma) {
         if (l > r) return 0;
         int res = 0;
