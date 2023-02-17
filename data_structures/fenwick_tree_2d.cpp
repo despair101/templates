@@ -1,4 +1,3 @@
-template <class A>
 class FenwickTree2D {
     int size;
     std::vector<std::vector<int>> t;
