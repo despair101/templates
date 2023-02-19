@@ -46,7 +46,7 @@ struct ModularInt {
         in >> a.x;
         return in;
     }
-    friend ostream& operator << (ostream& out, ModularInt& a) {
+    friend ostream& operator << (ostream& out, const ModularInt& a) {
         out << a.x;
         return out;
     }
