@@ -6,7 +6,6 @@
 
 #ifdef DESPAIR_101
 #include "debug_output.h"
-#include "gcc_functions.h"
 #define dbg(x) std::cerr << "\n" << #x << ":\n "; debug::print(x); std::cerr << "\n"
 #define showTest(x) std::cerr << "_____Test #" << x << "_____\n"
 #else
