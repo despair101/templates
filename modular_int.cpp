@@ -1,3 +1,5 @@
+// CONTAINS BUG WTF
+
 template <int MOD>
 struct ModularInt {
     int x;
