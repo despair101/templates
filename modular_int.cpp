@@ -52,7 +52,9 @@ struct ModularInt {
     }
 
     ModularInt() : x(0) {}
-    ModularInt(long long x) : x(int(x % MOD)) {
+    ModularInt(long long x) {
+        if (x > MOD) x %= MOD;
+        this->x = x;
         if (this->x < 0) this->x += MOD;
     }
 };
