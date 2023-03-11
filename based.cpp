@@ -24,9 +24,7 @@ using ld = long double;
 
 mt19937 rnd(101);
 
-void solve() {
-        
-}
+void solve() {}
 
 signed main() {
     std::cin.tie(nullptr);
