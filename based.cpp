@@ -16,15 +16,17 @@ bool umax(A& x, A y) { if (x >= y) return false; x = y; return true; }
 template <class A>
 bool umin(A& x, A y) { if (x <= y) return false; x = y; return true; }
 
-typedef long long ll;
-typedef long double ld;
+using ll = long long;
+using ld = long double;
 
 // #define int int64_t
 #define sz(x) int((x).size())
 
 mt19937 rnd(101);
 
-void solve() {}
+void solve() {
+        
+}
 
 signed main() {
     std::cin.tie(nullptr);
