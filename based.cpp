@@ -1,7 +1,3 @@
-#ifndef DESPAIR_101
-#pragma GCC optimize("O3")
-#endif
-
 #include "bits/stdc++.h"
 
 #ifdef DESPAIR_101
@@ -15,10 +11,10 @@
 
 using namespace std;
 
-template<class A>
-bool umax(A& x, A y) { if (y > x) { x = y; return true; } return false; }
-template<class A>
-bool umin(A& x, A y) { if (y < x) { x = y; return true; } return false; }
+template <class A>
+bool umax(A& x, A y) { if (x >= y) return false; x = y; return true; }
+template <class A>
+bool umin(A& x, A y) { if (x <= y) return false; x = y; return true; }
 
 typedef long long ll;
 typedef long double ld;
@@ -26,8 +22,9 @@ typedef long double ld;
 // #define int int64_t
 #define sz(x) int((x).size())
 
-void solve() {
-}
+mt19937 rnd(101);
+
+void solve() {}
 
 signed main() {
     std::cin.tie(nullptr);
@@ -35,7 +32,7 @@ signed main() {
     std::cout << std::fixed << std::setprecision(20);
 
     int testsCnt = 1;
-    // std::cin >> testsCnt;
+    std::cin >> testsCnt;
     for (int curTest = 1; curTest <= testsCnt; ++curTest) {
         showTest(curTest);
         solve();
