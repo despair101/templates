@@ -22,7 +22,8 @@ using ld = long double;
 // #define int int64_t
 #define sz(x) int((x).size())
 
-void solve() {}
+void solve() {
+}
 
 signed main() {
     std::cin.tie(nullptr);
