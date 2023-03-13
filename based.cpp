@@ -22,8 +22,6 @@ using ld = long double;
 // #define int int64_t
 #define sz(x) int((x).size())
 
-mt19937 rnd(101);
-
 void solve() {}
 
 signed main() {
