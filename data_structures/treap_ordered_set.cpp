@@ -6,7 +6,6 @@ struct Node {
     Node* l;
     Node* r;
 
-    Node() = default;
     explicit Node(int x_, int cnt_ = 1) : x(x_), cnt(cnt_), dp(cnt_), y(rnd()), l(nullptr), r(nullptr) {}
     ~Node() {
         if (l) delete l;
