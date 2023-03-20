@@ -12,9 +12,9 @@
 using namespace std;
 
 template <class A>
-bool umax(A& x, A y) { if (x >= y) return false; x = y; return true; }
+inline bool umax(A& x, A y) { if (x >= y) return false; x = y; return true; }
 template <class A>
-bool umin(A& x, A y) { if (x <= y) return false; x = y; return true; }
+inline bool umin(A& x, A y) { if (x <= y) return false; x = y; return true; }
 
 using ll = long long;
 using ld = long double;
@@ -30,7 +30,7 @@ signed main() {
     std::cout << std::fixed << std::setprecision(20);
 
     int testsCnt = 1;
-    std::cin >> testsCnt;
+    // std::cin >> testsCnt;
     for (int curTest = 1; curTest <= testsCnt; ++curTest) {
         showTest(curTest);
         solve();
