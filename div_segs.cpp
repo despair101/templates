@@ -6,6 +6,7 @@ int div_ceil(int a, int b) {
     return (a + b - 1) / b;
 }
 
+// floor(n / l) = x   =>   rx <= n   =>   r = floor(n / x)
 vector<tuple<int, int, int>> get_floors(int n) {
     vector<tuple<int, int, int>> res;
     int l = 1;
@@ -18,6 +19,7 @@ vector<tuple<int, int, int>> get_floors(int n) {
     return res;
 }
 
+// ceil(n / l) = x   =>   r(x - 1) < n   =>   r = ceil(n, x - 1) - 1
 vector<tuple<int, int, int>> get_ceils(int n) {
     vector<tuple<int, int, int>> res;
     int l = 1;
