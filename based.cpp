@@ -12,9 +12,18 @@
 using namespace std;
 
 template <class A>
-inline bool umax(A& x, A y) { if (x >= y) return false; x = y; return true; }
+inline bool umax(A& x, A y) {
+    if (x >= y) return false;
+    x = y;
+    return true;
+}
+
 template <class A>
-inline bool umin(A& x, A y) { if (x <= y) return false; x = y; return true; }
+inline bool umin(A& x, A y) {
+    if (x <= y) return false;
+    x = y;
+    return true;
+}
 
 using ll = long long;
 using ld = long double;
