@@ -2,7 +2,10 @@
 
 #ifdef DESPAIR_101
 #include "debug_output.h"
-#define dbg(x) std::cerr << "\n" << #x << ":\n "; debug::print(x); std::cerr << "\n"
+#define dbg(x)                                                                 \
+    std::cerr << "\n" << #x << ":\n ";                                         \
+    debug::print(x);                                                           \
+    std::cerr << "\n"
 #define showTest(x) std::cerr << "_____Test #" << x << "_____\n"
 #else
 #define dbg(x)
@@ -11,18 +14,20 @@
 
 using namespace std;
 
-template <class A>
-inline bool umax(A& x, A y) {
-    if (x >= y) return false;
-    x = y;
-    return true;
+template <class A> inline bool umax(A &x, A y) {
+    if (x < y) {
+        x = y;
+        return true;
+    }
+    return false;
 }
 
-template <class A>
-inline bool umin(A& x, A y) {
-    if (x <= y) return false;
-    x = y;
-    return true;
+template <class A> inline bool umin(A &x, A y) {
+    if (x > y) {
+        x = y;
+        return true;
+    }
+    return false;
 }
 
 using ll = long long;
