@@ -14,20 +14,11 @@
 
 using namespace std;
 
-template <class A> inline bool umax(A &x, A y) {
-    if (x < y) {
-        x = y;
-        return true;
-    }
-    return false;
+template <class A> inline bool umax(A &x, A const &y) {
+    return x < y ? (x = y, true) : false;
 }
-
-template <class A> inline bool umin(A &x, A y) {
-    if (x > y) {
-        x = y;
-        return true;
-    }
-    return false;
+template <class A> inline bool umin(A &x, A const &y) {
+    return x > y ? (x = y, true) : false;
 }
 
 using ll = long long;
