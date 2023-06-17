@@ -1,7 +1,7 @@
 #include "bits/stdc++.h"
 
 #ifdef DESPAIR_101
-#include "debug_output.h"
+#include "../debug_output.h"
 #define dbg(x)                                                                 \
     std::cerr << "\n" << #x << ":\n ";                                         \
     debug::print(x);                                                           \
@@ -35,7 +35,7 @@ signed main() {
     std::cout << std::fixed << std::setprecision(20);
 
     int testsCnt = 1;
-    // std::cin >> testsCnt;
+    std::cin >> testsCnt;
     for (int curTest = 1; curTest <= testsCnt; ++curTest) {
         showTest(curTest);
         solve();
