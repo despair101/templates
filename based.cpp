@@ -2,11 +2,8 @@
 
 #ifdef DESPAIR_101
 #include "../debug_output.h"
-#define dbg(x)                                                                 \
-    std::cerr << "\n" << #x << ":\n ";                                         \
-    debug::print(x);                                                           \
-    std::cerr << "\n"
-#define showTest(x) std::cerr << "_____Test #" << x << "_____\n"
+#define dbg(x) cerr << "\n" << #x << ":\n "; debug::print(x); cerr << "\n"
+#define showTest(x) cerr << "_____Test #" << x << "_____\n"
 #else
 #define dbg(x)
 #define showTest(x)
@@ -30,12 +27,12 @@ using ld = long double;
 void solve() {}
 
 signed main() {
-    std::cin.tie(nullptr);
-    std::ios::sync_with_stdio(false);
-    std::cout << std::fixed << std::setprecision(20);
+    cin.tie(nullptr);
+    ios::sync_with_stdio(false);
+    cout << fixed << setprecision(20);
 
     int testsCnt = 1;
-    std::cin >> testsCnt;
+    cin >> testsCnt;
     for (int curTest = 1; curTest <= testsCnt; ++curTest) {
         showTest(curTest);
         solve();
