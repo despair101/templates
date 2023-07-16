@@ -11,18 +11,13 @@
 
 using namespace std;
 
-template <class A> inline bool umax(A &x, A const &y) {
-    return x < y ? (x = y, true) : false;
-}
-template <class A> inline bool umin(A &x, A const &y) {
-    return x > y ? (x = y, true) : false;
-}
-
 using ll = long long;
 using ld = long double;
+// #define int ll
 
-// #define int int64_t
-#define sz(x) int((x).size())
+template <class A> inline int sz(A const &x) { return int(x.size()); }
+template <class A> inline bool umin(A &x, A const &y) { return x > y ? (x = y, true) : false; }
+template <class A> inline bool umax(A &x, A const &y) { return x < y ? (x = y, true) : false; }
 
 void solve() {}
 
@@ -32,7 +27,7 @@ signed main() {
     cout << fixed << setprecision(20);
 
     int testsCnt = 1;
-    cin >> testsCnt;
+    // cin >> testsCnt;
     for (int curTest = 1; curTest <= testsCnt; ++curTest) {
         showTest(curTest);
         solve();
