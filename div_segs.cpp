@@ -19,7 +19,7 @@ vector<array<int, 3>> get_floors(int n) {
     return res;
 }
 
-// ceil(n / l) = x   =>   r(x - 1) < n   =>   r = ceil(n, x - 1) - 1
+// ceil(n / l) = x   =>   r(x - 1) < n   =>   r = ceil(n / (x - 1)) - 1
 vector<array<int, 3>> get_ceils(int n) {
     vector<array<int, 3>> res;
     int l = 1;
